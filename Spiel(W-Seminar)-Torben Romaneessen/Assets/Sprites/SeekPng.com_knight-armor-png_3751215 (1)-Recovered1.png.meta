@@ -1,0 +1,420 @@
+fileFormatVersion: 2
+guid: a5be280206589bd45a3d877542d330bd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1746226322951276482
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_0
+  - first:
+      213: 9109420300429692997
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_1
+  - first:
+      213: -6209386602803012191
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_2
+  - first:
+      213: 4237773701229234064
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_3
+  - first:
+      213: -3131696445525781921
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_4
+  - first:
+      213: 5168520437246310526
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_5
+  - first:
+      213: -1360241919854548495
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_6
+  - first:
+      213: -414994640655695004
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_7
+  - first:
+      213: 8887205087944107446
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_8
+  - first:
+      213: -4272512620024239096
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_9
+  - first:
+      213: 2045404436333789749
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_10
+  - first:
+      213: -3097710104999402536
+    second: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_0
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 201
+        width: 28
+        height: 26
+      alignment: 9
+      pivot: {x: 0.080192566, y: 0.08071371}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c782fcb697db3810800000000000000
+      internalID: 1746226322951276482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_1
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 174
+        width: 25
+        height: 22
+      alignment: 9
+      pivot: {x: 0.54096496, y: 0.037947223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54018dcdf792b6e70800000000000000
+      internalID: 9109420300429692997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 177
+        width: 7
+        height: 11
+      alignment: 9
+      pivot: {x: 0.41874477, y: 0.9136505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad5bd298c3d3d9a0800000000000000
+      internalID: -6209386602803012191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_3
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 177
+        width: 7
+        height: 10
+      alignment: 9
+      pivot: {x: 0.47291347, y: 0.92657626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 097c2448ab89fca30800000000000000
+      internalID: 4237773701229234064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 155
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52151cdcaaf984d0800000000000000
+      internalID: -3131696445525781921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_5
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 134
+        width: 68
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78b96424f54ab740800000000000000
+      internalID: 5168520437246310526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_6
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 124
+        width: 17
+        height: 14
+      alignment: 9
+      pivot: {x: 0.78535956, y: 0.25579453}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f969764e237f1de0800000000000000
+      internalID: -1360241919854548495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_7
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 127
+        width: 12
+        height: 11
+      alignment: 9
+      pivot: {x: 0.49209976, y: 0.1035836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463c604b294ad3af0800000000000000
+      internalID: -414994640655695004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 39
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5e3f8e0f1b55b70800000000000000
+      internalID: 8887205087944107446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_9
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 37
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ce419a86cf4b4c0800000000000000
+      internalID: -4272512620024239096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_10
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 46
+        width: 34
+        height: 33
+      alignment: 9
+      pivot: {x: 0.08953633, y: 0.077098034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5320fa17f7cb26c10800000000000000
+      internalID: 2045404436333789749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_11
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 37
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d36f566219b205d0800000000000000
+      internalID: -3097710104999402536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Character
+  - Ground
+  - ThornsTag
+  - Thorns
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - Background
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 948468073
+    locked: 0
+  - name: Decoration
+    uniqueID: 982456101
+    locked: 0
+  - name: Ground
+    uniqueID: 3164945235
+    locked: 0
+  - name: Character
+    uniqueID: 1220406661
+    locked: 0
+  - name: Decoration2
+    uniqueID: 1909600577
+    locked: 0
