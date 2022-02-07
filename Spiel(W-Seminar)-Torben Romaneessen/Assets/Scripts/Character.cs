@@ -78,21 +78,9 @@ public class Character : MonoBehaviour
         DoubleJump();
         PlayerJump();
         FlipCharacter();
-        Attack();
-        
-        /*if (Time.time >= nextAttackTime)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                //Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
-            }
-        }*/
+        AttackCooldown();
 
         //StartCoroutine(Dash());
-
-
-
     }
 
     private void FixedUpdate()
@@ -276,6 +264,17 @@ public class Character : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackrange);
     }
 
+    private void AttackCooldown()
+    {
+        if (Time.time >= nextAttackTime)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+        }
+    }
 }
 
     //private ienumerator dash()
