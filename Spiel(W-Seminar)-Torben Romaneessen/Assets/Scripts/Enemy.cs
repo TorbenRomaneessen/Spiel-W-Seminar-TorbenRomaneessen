@@ -10,12 +10,14 @@ public class Enemy : MonoBehaviour
 
     public Transform enemy;
     SpriteRenderer spriteRendererEnemy;
+    public Animator animator;
     private float timePassed = 0;
 
     public void Awake()
     {
         enemy = GetComponent<Transform>();
         spriteRendererEnemy = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -30,7 +32,10 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
         currentHealth -= damage;
+
+        animator.SetTrigger("Hurt");
 
         if (currentHealth <= 0)
         {
@@ -42,7 +47,15 @@ public class Enemy : MonoBehaviour
     {
 
         Debug.Log("Enemy died!");
+
+        animator.SetBool("Dead", true);
+
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
     }
+      
+     
+    
 
     private IEnumerator EnemyMovement()
     {
