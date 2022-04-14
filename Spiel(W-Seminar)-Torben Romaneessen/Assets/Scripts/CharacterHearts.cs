@@ -9,7 +9,7 @@ public class CharacterHearts : MonoBehaviour
     public float playerHearts = 5f;
     public CharacterHearts(int PlayerHearts)
     {
-
+        
     }
 
     // Start is called before the first frame update
