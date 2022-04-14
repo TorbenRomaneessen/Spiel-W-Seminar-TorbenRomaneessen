@@ -1764,7 +1764,7 @@ GameObject:
   - component: {fileID: 52363230}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1833,7 +1833,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 22
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -179.647}
 --- !u!1 &55291064
 GameObject:
@@ -2609,7 +2609,7 @@ GameObject:
   - component: {fileID: 111545593}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2678,7 +2678,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 13
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &119257329
 GameObject:
@@ -4407,7 +4407,7 @@ GameObject:
   - component: {fileID: 213256947}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4420,11 +4420,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213256945}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.963694, y: -0.40573955, z: 36.292534}
+  m_LocalPosition: {x: 7.957676, y: -1.7133772, z: 642.3745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 925284561}
-  m_RootOrder: 5
+  m_Father: {fileID: 1493878746}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &213256947
 SpriteRenderer:
@@ -8800,7 +8800,7 @@ GameObject:
   - component: {fileID: 433324155}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8869,7 +8869,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 14
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -1.179, y: 0, z: -33.395}
 --- !u!1 &433645656
 GameObject:
@@ -9921,7 +9921,7 @@ GameObject:
   - component: {fileID: 464323063}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9990,7 +9990,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 21
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &467201707
 GameObject:
@@ -13212,8 +13212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317e0172acc43874dafe105f68a6df39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealthPlayer: 5
   speed: 5
-  CharacterHearts: {fileID: 0}
   jumpForce: 7
   character: {fileID: 0}
   rigidBody2D: {fileID: 0}
@@ -13903,7 +13903,7 @@ GameObject:
   - component: {fileID: 675593006}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Thorns
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13916,11 +13916,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675593003}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.8524, y: 0.6540704, z: 36.292534}
+  m_LocalPosition: {x: 7.0689697, y: -0.6535673, z: 642.3745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 925284561}
-  m_RootOrder: 3
+  m_Father: {fileID: 1493878746}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &675593005
 SpriteRenderer:
@@ -13987,7 +13987,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5207653, y: -0.024681091}
+  m_Offset: {x: 0.5207653, y: -0.044501543}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13998,7 +13998,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75419235, y: 1.6068878}
+  m_Size: {x: 0.75419235, y: 1.5672469}
   m_EdgeRadius: 0
 --- !u!1 &690471857
 GameObject:
@@ -14205,7 +14205,7 @@ GameObject:
   - component: {fileID: 697033271}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14274,7 +14274,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &700279464
 GameObject:
@@ -16904,7 +16904,7 @@ GameObject:
   - component: {fileID: 846401787}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16973,7 +16973,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 18
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &850086586
 GameObject:
@@ -17666,7 +17666,7 @@ GameObject:
   - component: {fileID: 874610715}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Thorns
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17679,11 +17679,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874610712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.755695, y: 0.9722605, z: 36.292534}
+  m_LocalPosition: {x: 8.165674, y: -0.33537722, z: 642.3745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 925284561}
-  m_RootOrder: 4
+  m_Father: {fileID: 1493878746}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &874610714
 SpriteRenderer:
@@ -17750,7 +17750,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09291077, y: 0.2261765}
+  m_Offset: {x: -0.09291077, y: 0.20239186}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17761,7 +17761,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25868988, y: 0.17893648}
+  m_Size: {x: 0.25868988, y: 0.1313672}
   m_EdgeRadius: 0
 --- !u!1 &876213880
 GameObject:
@@ -18687,15 +18687,10 @@ Transform:
   m_LocalPosition: {x: -10.301807, y: -0.34732485, z: -36.292534}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1493878746}
   - {fileID: 1981955169}
   - {fileID: 2018361576}
   - {fileID: 2011986625}
-  - {fileID: 675593004}
-  - {fileID: 874610713}
-  - {fileID: 213256946}
-  - {fileID: 1869784401}
-  - {fileID: 2016596552}
-  - {fileID: 1071076023}
   - {fileID: 1861230714}
   - {fileID: 1627351275}
   - {fileID: 697033272}
@@ -21171,7 +21166,7 @@ GameObject:
   - component: {fileID: 1071076024}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21184,11 +21179,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071076022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.334694, y: 0.84226036, z: 36.292534}
+  m_LocalPosition: {x: 7.5866756, y: -0.46537733, z: 642.3745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 925284561}
-  m_RootOrder: 8
+  m_Father: {fileID: 1493878746}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1071076024
 SpriteRenderer:
@@ -21613,7 +21608,7 @@ GameObject:
   - component: {fileID: 1090834457}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21682,7 +21677,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 20
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -42.409}
 --- !u!1 &1101720316
 GameObject:
@@ -22165,7 +22160,7 @@ GameObject:
   - component: {fileID: 1118186634}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22234,7 +22229,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 15
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: -3.75, y: 5.77, z: 158.36}
 --- !u!1 &1119285214
 GameObject:
@@ -27251,7 +27246,7 @@ GameObject:
   - component: {fileID: 1391687198}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27320,7 +27315,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 17
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45.106}
 --- !u!1 &1392756995
 GameObject:
@@ -28976,7 +28971,7 @@ GameObject:
   - component: {fileID: 1460033703}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29045,7 +29040,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 12
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 3.239, z: 25.053}
 --- !u!1 &1466828486
 GameObject:
@@ -29702,7 +29697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0e7eeb46a756e45a2e9577b8c6b3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealthEnemy: 100
   enemy: {fileID: 1493102935}
   animator: {fileID: 0}
 --- !u!61 &1493102932
@@ -29789,6 +29784,42 @@ Transform:
   - {fileID: 1570492816}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1493878745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1493878746}
+  m_Layer: 0
+  m_Name: Gap 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1493878746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493878745}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.92137, y: 1.3076377, z: -606.082}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 675593004}
+  - {fileID: 874610713}
+  - {fileID: 213256946}
+  - {fileID: 1869784401}
+  - {fileID: 2016596552}
+  - {fileID: 1071076023}
+  m_Father: {fileID: 925284561}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1499775002
 GameObject:
@@ -30455,7 +30486,7 @@ GameObject:
   - component: {fileID: 1541246064}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30524,7 +30555,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 19
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1546944463
 GameObject:
@@ -32547,7 +32578,7 @@ GameObject:
   - component: {fileID: 1627351274}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32616,7 +32647,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 10
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -18.992}
 --- !u!1 &1633233322
 GameObject:
@@ -36789,7 +36820,7 @@ GameObject:
   - component: {fileID: 1861230713}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36858,7 +36889,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1863783315
 GameObject:
@@ -37234,7 +37265,7 @@ GameObject:
   - component: {fileID: 1869784402}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37247,11 +37278,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869784400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.415695, y: 0.44926047, z: 36.292534}
+  m_LocalPosition: {x: 7.5056744, y: -0.8583772, z: 642.3745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 925284561}
-  m_RootOrder: 6
+  m_Father: {fileID: 1493878746}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1869784402
 SpriteRenderer:
@@ -38991,7 +39022,7 @@ GameObject:
   - component: {fileID: 1981955168}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39060,7 +39091,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983530833
 GameObject:
@@ -39724,7 +39755,7 @@ GameObject:
   - component: {fileID: 2011986624}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39793,7 +39824,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2013748761
 GameObject:
@@ -39890,7 +39921,7 @@ GameObject:
   - component: {fileID: 2016596553}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39903,11 +39934,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016596551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.220694, y: 0.42526054, z: 36.292534}
+  m_LocalPosition: {x: 7.700676, y: -0.88237715, z: 642.3745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 925284561}
-  m_RootOrder: 7
+  m_Father: {fileID: 1493878746}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2016596553
 SpriteRenderer:
@@ -39973,7 +40004,7 @@ GameObject:
   - component: {fileID: 2018361575}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40042,7 +40073,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2020607949
 GameObject:
@@ -41629,7 +41660,7 @@ GameObject:
   - component: {fileID: 2091377346}
   m_Layer: 0
   m_Name: Thorns
-  m_TagString: ThornsTag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41698,7 +41729,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 925284561}
-  m_RootOrder: 16
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2092282649
 GameObject:
