@@ -94,6 +94,7 @@ public class Character : MonoBehaviour
         DoubleJump();
         PlayerJump();
         FlipCharacter();
+<<<<<<< HEAD
         AttackCooldown();
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -116,6 +117,23 @@ public class Character : MonoBehaviour
 =======
         DamageingObjects();      
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+        Attack();
+        
+        /*if (Time.time >= nextAttackTime)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                //Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+        }*/
+
+        //StartCoroutine(Dash());
+
+
+
+>>>>>>> parent of 0e35c16 (Weitere Turtle Sachen)
     }
 
     private void FixedUpdate()
@@ -299,6 +317,7 @@ public class Character : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackrange);
     }
 
+<<<<<<< HEAD
     private void AttackCooldown()
     {
         if (Time.time >= nextAttackTime)
@@ -346,6 +365,8 @@ public class Character : MonoBehaviour
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 =======
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
+=======
+>>>>>>> parent of 0e35c16 (Weitere Turtle Sachen)
 }
 
     //private ienumerator dash()

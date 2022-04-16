@@ -115,7 +115,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        StartCoroutine("EnemyMovement");
+        EnemyMovement();
     }
 
     public void TakeDamage(int damage)
@@ -251,8 +251,7 @@ public class Enemy : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
 
-            this.transform.position = new Vector3(enemy.position.x + 0.0015f, enemy.position.y, enemy.position.z);
-            this.transform.localScale = new Vector3(-1, enemy.localScale.y, enemy.localScale.z);
+            this.transform.position = new Vector3(enemy.position.x + 0.0025f, enemy.position.y, enemy.position.z);
             timePassed = timePassed + 1;
             
 
@@ -261,10 +260,9 @@ public class Enemy : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(1f);
-            this.transform.position = new Vector3(enemy.position.x - 0.0015f, enemy.position.y, enemy.position.z);
-            this.transform.localScale = new Vector3(1, enemy.localScale.y, enemy.localScale.z);
+            this.transform.position = new Vector3(enemy.position.x - 0.0025f, enemy.position.y, enemy.position.z);
             timePassed = timePassed - 1;
-            
+            this.transform.localScale = new Vector3(- enemy.localScale.x, enemy.localScale.y, enemy.localScale.z);
 
 
         }
