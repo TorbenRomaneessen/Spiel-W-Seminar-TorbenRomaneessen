@@ -33,6 +33,7 @@ public class Character : MonoBehaviour
     private string attackAnimation = "Attack";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     //private string dashAnimation = "Dash";
 <<<<<<< HEAD
 
@@ -43,6 +44,8 @@ public class Character : MonoBehaviour
     //private string dashAnimation = "Dash";
 =======
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
+=======
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 =======
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 
@@ -94,6 +97,7 @@ public class Character : MonoBehaviour
         AttackCooldown();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -103,6 +107,9 @@ public class Character : MonoBehaviour
 =======
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
         //StartCoroutine(Dash());
+=======
+        DamageingObjects();      
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 =======
         DamageingObjects();      
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
