@@ -31,37 +31,8 @@ public class Character : MonoBehaviour
     private string jumpAnimation = "Jump";
     private string idleAnimation = "Idle";
     private string attackAnimation = "Attack";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //private string dashAnimation = "Dash";
-<<<<<<< HEAD
 
     private string takeDamageAnimation = "TakeDamage";
-=======
->>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
-
-    //private string dashAnimation = "Dash";
-=======
->>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
-=======
->>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
-=======
->>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
-=======
->>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
-=======
-    //private string dashAnimation = "Dash";
->>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
-=======
->>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
-=======
-    //private string dashAnimation = "Dash";
->>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 
     private bool isGrounded = false;
     private string groundTag = "Ground";
@@ -108,34 +79,11 @@ public class Character : MonoBehaviour
         DoubleJump();
         PlayerJump();
         FlipCharacter();
-<<<<<<< HEAD
-        AttackCooldown();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        DamageingObjects();
-=======
->>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
-=======
->>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
-        //StartCoroutine(Dash());
-=======
-        DamageingObjects();      
->>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
-=======
-        DamageingObjects();      
->>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
-=======
-        DamageingObjects();      
->>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
-=======
+        AttackCooldown();
+
+        //DamageingObjects();    
+
         Attack();
         
         /*if (Time.time >= nextAttackTime)
@@ -145,27 +93,7 @@ public class Character : MonoBehaviour
                 //Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
-        }*/
-=======
-=======
->>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
-        DamageingObjects();      
-    }
->>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
-
-        //StartCoroutine(Dash());
-
-
-
->>>>>>> parent of 0e35c16 (Weitere Turtle Sachen)
-=======
-
-        //StartCoroutine(Dash());
->>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
-=======
-
-        //StartCoroutine(Dash());
->>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
+        }*/  
     }
 
     private void FixedUpdate()
@@ -349,7 +277,6 @@ public class Character : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackrange);
     }
 
-<<<<<<< HEAD
     private void AttackCooldown()
     {
         if (Time.time >= nextAttackTime)
@@ -361,50 +288,35 @@ public class Character : MonoBehaviour
             }
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
+    //public void DamageingObjects()
+    //{
+    //    if (CollisionWithThorns == true && counter >= 2)
+    //    {
+    //        currentHealthPlayer -= 1;
 
-    public void DamageingObjects()
-    {
-        if (CollisionWithThorns == true && counter >= 2)
-        {
-            currentHealthPlayer -= 1;
+    //        Debug.Log("Player has been hit");
+    //        counter = 0;
+    //        this.transform.position = new Vector3(character.position.x - 1f, character.position.y + 7f, character.position.z);
+    //    }
 
-            Debug.Log("Player has been hit");
-            counter = 0;
-            this.transform.position = new Vector3(character.position.x - 1f, character.position.y + 7f, character.position.z);
-        }
-
-        if (currentHealthPlayer <= 0)
-        {
-            Die();
-        }
-    }
+    //    if (currentHealthPlayer <= 0)
+    //    {
+    //        Die();
+    //    }
+    //}
 
 
-    private void Die()
-    {
-        Debug.Log("Character died!");
+    //private void Die()
+    //{
+    //    Debug.Log("Character died!");
 
-        animator.SetBool("Dead", true);
+    //    animator.SetBool("Dead", true);
 
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-    }
-=======
->>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
-=======
->>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
-=======
->>>>>>> parent of 0e35c16 (Weitere Turtle Sachen)
-=======
->>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
-=======
->>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
+    //    GetComponent<Collider2D>().enabled = false;
+    //    this.enabled = false;
+    //}
 }
 
     //private ienumerator dash()
