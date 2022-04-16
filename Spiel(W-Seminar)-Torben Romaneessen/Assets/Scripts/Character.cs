@@ -32,6 +32,7 @@ public class Character : MonoBehaviour
     private string idleAnimation = "Idle";
     private string attackAnimation = "Attack";
 <<<<<<< HEAD
+<<<<<<< HEAD
     //private string dashAnimation = "Dash";
 <<<<<<< HEAD
 
@@ -42,6 +43,8 @@ public class Character : MonoBehaviour
     //private string dashAnimation = "Dash";
 =======
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
+=======
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 
     private bool isGrounded = false;
     private string groundTag = "Ground";
@@ -90,6 +93,7 @@ public class Character : MonoBehaviour
         FlipCharacter();
         AttackCooldown();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -99,6 +103,9 @@ public class Character : MonoBehaviour
 =======
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
         //StartCoroutine(Dash());
+=======
+        DamageingObjects();      
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 =======
         DamageingObjects();      
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)

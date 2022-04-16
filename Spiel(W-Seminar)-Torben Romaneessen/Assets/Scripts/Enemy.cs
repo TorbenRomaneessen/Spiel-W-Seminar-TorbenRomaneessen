@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public int maxhealthenemy = 100;
     int currenthealthenemy;
@@ -38,13 +39,26 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     private float timePassed = 0;
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+    public int maxHealthEnemy = 100;
+    int currentHealthEnemy;
+
+    public Transform enemy;
+    SpriteRenderer spriteRendererEnemy;
+    public Animator animator;
+    private float timePassed = 0;
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 
     public void Awake()
     {
         enemy = GetComponent<Transform>();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         spriterendererenemy = GetComponent<SpriteRenderer>();
+=======
+        spriteRendererEnemy = GetComponent<SpriteRenderer>();
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 =======
         spriteRendererEnemy = GetComponent<SpriteRenderer>();
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
@@ -56,6 +70,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -73,6 +88,9 @@ public class Enemy : MonoBehaviour
 =======
         currentHealthEnemy = maxHealthEnemy;
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+        currentHealthEnemy = maxHealthEnemy;
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
     }
 
     private void Update()
@@ -84,6 +102,7 @@ public class Enemy : MonoBehaviour
     {
 <<<<<<< HEAD
         this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -126,6 +145,13 @@ public class Enemy : MonoBehaviour
 
         if (currentHealthEnemy <= 0)
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+        currentHealthEnemy -= damage;
+
+        animator.SetTrigger("Hurt");
+
+        if (currentHealthEnemy <= 0)
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
         {
             Die();
         }
@@ -136,7 +162,11 @@ public class Enemy : MonoBehaviour
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Debug.Log("enemy died!");
+=======
+        Debug.Log("Enemy died!");
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 =======
         Debug.Log("Enemy died!");
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
@@ -147,6 +177,7 @@ public class Enemy : MonoBehaviour
         this.enabled = false;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -154,6 +185,11 @@ public class Enemy : MonoBehaviour
         Debug.Log("Enemy died!");
     }
 >>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
+=======
+      
+     
+    
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 =======
       
      
