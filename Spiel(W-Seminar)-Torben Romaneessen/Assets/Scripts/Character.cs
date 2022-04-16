@@ -31,10 +31,13 @@ public class Character : MonoBehaviour
     private string jumpAnimation = "Jump";
     private string idleAnimation = "Idle";
     private string attackAnimation = "Attack";
+<<<<<<< HEAD
     //private string dashAnimation = "Dash";
 <<<<<<< HEAD
 
     private string takeDamageAnimation = "TakeDamage";
+=======
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 
     //private string dashAnimation = "Dash";
 =======
@@ -86,6 +89,7 @@ public class Character : MonoBehaviour
         PlayerJump();
         FlipCharacter();
         AttackCooldown();
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -95,6 +99,9 @@ public class Character : MonoBehaviour
 =======
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
         //StartCoroutine(Dash());
+=======
+        DamageingObjects();      
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
     }
 
     private void FixedUpdate()
@@ -153,6 +160,7 @@ public class Character : MonoBehaviour
 
             animator.SetBool("Jump", true);
         }
+
     }
 
 
@@ -297,7 +305,6 @@ public class Character : MonoBehaviour
     {
         if (CollisionWithThorns == true && counter >= 2)
         {
-            //animator.SetTrigger(takeDamageAnimation);
             currentHealthPlayer -= 1;
 
             Debug.Log("Player has been hit");
@@ -316,12 +323,10 @@ public class Character : MonoBehaviour
     {
         Debug.Log("Character died!");
 
-        //animator.SetBool("Dead", true);
+        animator.SetBool("Dead", true);
 
-        this.transform.position = new Vector3(-35, 5, 0);
-        currentHealthPlayer = 5;
-        //GetComponent<Collider2D>().enabled = false;
-        //this.enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
     }
 =======
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)

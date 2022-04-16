@@ -9,7 +9,7 @@ public class CharacterHearts : MonoBehaviour
     public float playerHearts = 5f;
     public CharacterHearts(int PlayerHearts)
     {
-
+        
     }
 
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class CharacterHearts : MonoBehaviour
     }*/
     public void DamageingObjects()
     {
-        if (CollisionWithThorns == true)
+        if(CollisionWithThorns == true)
         {
             TakeDamage(1);
         }
