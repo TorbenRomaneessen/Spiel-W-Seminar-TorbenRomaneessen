@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public int maxhealthenemy = 100;
     int currenthealthenemy;
@@ -57,10 +58,20 @@ public class Enemy : MonoBehaviour
     SpriteRenderer spriteRendererEnemy;
     private float timePassed = 0;
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+    public int maxHealthEnemy = 100;
+    int currentHealthEnemy;
+
+    public Transform enemy;
+    SpriteRenderer spriteRendererEnemy;
+    public Animator animator;
+    private float timePassed = 0;
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 
     public void Awake()
     {
         enemy = GetComponent<Transform>();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -76,6 +87,9 @@ public class Enemy : MonoBehaviour
 =======
         spriteRendererEnemy = GetComponent<SpriteRenderer>();
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+        spriteRendererEnemy = GetComponent<SpriteRenderer>();
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
         animator = GetComponent<Animator>();
 =======
         spriteRendererEnemy = GetComponent<SpriteRenderer>();
@@ -86,6 +100,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -111,11 +126,18 @@ public class Enemy : MonoBehaviour
 =======
         currentHealthEnemy = maxHealthEnemy;
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+        currentHealthEnemy = maxHealthEnemy;
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
     }
 
     private void Update()
     {
+<<<<<<< HEAD
         EnemyMovement();
+=======
+        StartCoroutine("EnemyMovement");
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
     }
 
     public void TakeDamage(int damage)
@@ -123,6 +145,7 @@ public class Enemy : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
         this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -186,6 +209,13 @@ public class Enemy : MonoBehaviour
 
         if (currentHealthEnemy <= 0)
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+        currentHealthEnemy -= damage;
+
+        animator.SetTrigger("Hurt");
+
+        if (currentHealthEnemy <= 0)
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
         {
             Die();
         }
@@ -194,6 +224,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -209,12 +240,16 @@ public class Enemy : MonoBehaviour
 =======
         Debug.Log("Enemy died!");
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+        Debug.Log("Enemy died!");
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 
         animator.SetBool("Dead", true);
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -243,6 +278,11 @@ public class Enemy : MonoBehaviour
 =======
     }
 >>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
+=======
+      
+     
+    
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 
     private IEnumerator EnemyMovement()
     {
@@ -251,7 +291,12 @@ public class Enemy : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
 
+<<<<<<< HEAD
             this.transform.position = new Vector3(enemy.position.x + 0.0025f, enemy.position.y, enemy.position.z);
+=======
+            this.transform.position = new Vector3(enemy.position.x + 0.0015f, enemy.position.y, enemy.position.z);
+            this.transform.localScale = new Vector3(-1, enemy.localScale.y, enemy.localScale.z);
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
             timePassed = timePassed + 1;
             
 
@@ -260,9 +305,16 @@ public class Enemy : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(1f);
+<<<<<<< HEAD
             this.transform.position = new Vector3(enemy.position.x - 0.0025f, enemy.position.y, enemy.position.z);
             timePassed = timePassed - 1;
             this.transform.localScale = new Vector3(- enemy.localScale.x, enemy.localScale.y, enemy.localScale.z);
+=======
+            this.transform.position = new Vector3(enemy.position.x - 0.0015f, enemy.position.y, enemy.position.z);
+            this.transform.localScale = new Vector3(1, enemy.localScale.y, enemy.localScale.z);
+            timePassed = timePassed - 1;
+            
+>>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 
 
         }
