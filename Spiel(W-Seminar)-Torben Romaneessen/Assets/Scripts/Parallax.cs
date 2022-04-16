@@ -15,7 +15,7 @@ public class Parallax : MonoBehaviour
 
     }
 
-    
+
     void Update()
     {
         //float temp = (camera.transform.position.x * (1 - parallaxEffect));
@@ -32,6 +32,7 @@ public class Parallax : MonoBehaviour
             startposition -= length;
         }
 
-    */}
+    */
+    }
 
 }

@@ -33,6 +33,7 @@ public class Character : MonoBehaviour
     private string jumpAnimation = "Jump";
     private string idleAnimation = "Idle";
     private string attackAnimation = "Attack";
+    private string takeDamageAnimation = "TakeDamage";
 
     private bool isGrounded = false;
     private string groundTag = "Ground";
@@ -77,7 +78,7 @@ public class Character : MonoBehaviour
         PlayerJump();
         FlipCharacter();
         AttackCooldown();
-        DamageingObjects();      
+        DamageingObjects();
     }
 
 
@@ -132,7 +133,6 @@ public class Character : MonoBehaviour
         {
             animator.SetBool("Jump", true);
         }
-
     }
 
 
@@ -237,6 +237,7 @@ public class Character : MonoBehaviour
     {
         if (CollisionWithThorns == true && counter >= 2)
         {
+            //animator.SetTrigger(takeDamageAnimation);
             currentHealthPlayer -= 1;
 
             Debug.Log("Player has been hit");
@@ -255,10 +256,12 @@ public class Character : MonoBehaviour
     {
         Debug.Log("Character died!");
 
-        animator.SetBool("Dead", true);
+        //animator.SetBool("Dead", true);
 
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
+        this.transform.position = new Vector3(-35, 5, 0);
+        currentHealthPlayer = 5;
+        //GetComponent<Collider2D>().enabled = false;
+        //this.enabled = false;
     }
 }
 

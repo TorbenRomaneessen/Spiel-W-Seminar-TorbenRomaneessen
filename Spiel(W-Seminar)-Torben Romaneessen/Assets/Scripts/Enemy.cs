@@ -5,39 +5,39 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    public int maxHealthEnemy = 100;
-    int currentHealthEnemy;
+    public int maxhealthenemy = 100;
+    int currenthealthenemy;
 
     public Transform enemy;
-    SpriteRenderer spriteRendererEnemy;
+    SpriteRenderer spriterendererenemy;
     public Animator animator;
-    private float timePassed = 0;
+    private float timepassed = 0;
 
     public void Awake()
     {
         enemy = GetComponent<Transform>();
-        spriteRendererEnemy = GetComponent<SpriteRenderer>();
+        spriterendererenemy = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
     void Start()
     {
-        currentHealthEnemy = maxHealthEnemy;
+        currenthealthenemy = maxhealthenemy;
     }
 
     private void Update()
     {
-        StartCoroutine("EnemyMovement");
+        StartCoroutine("enemymovement");
     }
 
     public void TakeDamage(int damage)
     {
         this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
-        currentHealthEnemy -= damage;
+        currenthealthenemy -= damage;
 
-        animator.SetTrigger("Hurt");
+        animator.SetTrigger("hurt");
 
-        if (currentHealthEnemy <= 0)
+        if (currenthealthenemy <= 0)
         {
             Die();
         }
@@ -46,28 +46,28 @@ public class Enemy : MonoBehaviour
     void Die()
     {
 
-        Debug.Log("Enemy died!");
+        Debug.Log("enemy died!");
 
-        animator.SetBool("Dead", true);
+        animator.SetBool("dead", true);
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
     }
-      
-     
-    
+
+
+
 
     private IEnumerator EnemyMovement()
     {
 
-        if (timePassed < 1)
+        if (timepassed < 1)
         {
             yield return new WaitForSeconds(1f);
 
             this.transform.position = new Vector3(enemy.position.x + 0.0015f, enemy.position.y, enemy.position.z);
             this.transform.localScale = new Vector3(-1, enemy.localScale.y, enemy.localScale.z);
-            timePassed = timePassed + 1;
-            
+            timepassed = timepassed + 1;
+
 
         }
 
@@ -76,8 +76,8 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(1f);
             this.transform.position = new Vector3(enemy.position.x - 0.0015f, enemy.position.y, enemy.position.z);
             this.transform.localScale = new Vector3(1, enemy.localScale.y, enemy.localScale.z);
-            timePassed = timePassed - 1;
-            
+            timepassed = timepassed - 1;
+
 
 
         }

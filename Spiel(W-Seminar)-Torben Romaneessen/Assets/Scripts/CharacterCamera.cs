@@ -2,35 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterCamera : MonoBehaviour
+public class charactercamera : MonoBehaviour
 {
     private Transform character;
 
-    private Vector3 temPos;
+    private Vector3 tempos;
 
 
     void Start()
     {
-        character = GameObject.FindWithTag("Character").transform;
+        character = GameObject.FindWithTag("character").transform;
     }
 
 
     void Update()
     {
-        //CheckForDash();
-        temPos = transform.position;
-        temPos.x = character.position.x;
+        //checkfordash();
+        tempos = transform.position;
+        tempos.x = character.position.x;
 
-        transform.position = temPos;
-
-
+        transform.position = tempos;
     }
 
-    //private void CheckForDash()
+    //private void checkfordash()
     //{
-    //if (Input.GetKeyDown(KeyCode.F))
+    //if (input.getkeydown(keycode.f))
     //{
-    //this.temPos = new Vector3(temPos.x + 2.2f,temPos.y, temPos.z);
+    //this.tempos = new vector3(tempos.x + 2.2f,tempos.y, tempos.z);
     //}
     //}
 
