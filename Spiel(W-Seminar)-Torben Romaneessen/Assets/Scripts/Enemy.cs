@@ -5,8 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
+
     public int maxhealthenemy = 100;
     int currenthealthenemy;
+
+    public int maxHealth = 100;
+    int currentHealth;
 
     public Transform enemy;
     SpriteRenderer spriterendererenemy;
@@ -22,7 +26,11 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+
         currenthealthenemy = maxhealthenemy;
+
+        currentHealth = maxHealth;
+
     }
 
     private void Update()
@@ -33,11 +41,19 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
+
         currenthealthenemy -= damage;
+
+        currentHealth -= damage;
+
 
         animator.SetTrigger("hurt");
 
+
         if (currenthealthenemy <= 0)
+
+        if (currentHealth <= 0)
+
         {
             Die();
         }
