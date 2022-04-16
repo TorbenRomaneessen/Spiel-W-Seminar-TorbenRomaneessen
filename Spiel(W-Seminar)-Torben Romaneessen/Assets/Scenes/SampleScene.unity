@@ -13212,7 +13212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317e0172acc43874dafe105f68a6df39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   speed: 4
+=======
+  speed: 5
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
   CharacterHearts: {fileID: 0}
   jumpForce: 7
   character: {fileID: 0}
@@ -29934,7 +29938,11 @@ Transform:
   - {fileID: 459543530}
   - {fileID: 1570492816}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 7
+=======
+  m_RootOrder: 6
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1499775002
 GameObject:

@@ -35,6 +35,7 @@ public class Character : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     //private string dashAnimation = "Dash";
 <<<<<<< HEAD
 
@@ -51,6 +52,9 @@ public class Character : MonoBehaviour
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 =======
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+    //private string dashAnimation = "Dash";
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 
     private bool isGrounded = false;
     private string groundTag = "Ground";
@@ -103,6 +107,7 @@ public class Character : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -142,6 +147,10 @@ public class Character : MonoBehaviour
 
 
 >>>>>>> parent of 0e35c16 (Weitere Turtle Sachen)
+=======
+
+        //StartCoroutine(Dash());
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
     }
 
     private void FixedUpdate()
@@ -339,6 +348,7 @@ public class Character : MonoBehaviour
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -375,6 +385,8 @@ public class Character : MonoBehaviour
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 =======
 >>>>>>> parent of 0e35c16 (Weitere Turtle Sachen)
+=======
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 }
 
     //private ienumerator dash()

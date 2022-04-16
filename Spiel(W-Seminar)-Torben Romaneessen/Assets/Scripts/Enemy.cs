@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public int maxhealthenemy = 100;
     int currenthealthenemy;
@@ -44,6 +45,10 @@ public class Enemy : MonoBehaviour
 =======
     public int maxHealthEnemy = 100;
     int currentHealthEnemy;
+=======
+    public int maxHealth = 100;
+    int currentHealth;
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 
     public Transform enemy;
     SpriteRenderer spriteRendererEnemy;
@@ -106,6 +111,7 @@ public class Enemy : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         currenthealthenemy = maxhealthenemy;
 
@@ -129,6 +135,9 @@ public class Enemy : MonoBehaviour
 =======
         currentHealthEnemy = maxHealthEnemy;
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+        currentHealth = maxHealth;
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
     }
 
     private void Update()
@@ -145,6 +154,7 @@ public class Enemy : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
         this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -216,6 +226,13 @@ public class Enemy : MonoBehaviour
 
         if (currentHealthEnemy <= 0)
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+        currentHealth -= damage;
+
+        animator.SetTrigger("Hurt");
+
+        if (currentHealth <= 0)
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
         {
             Die();
         }
