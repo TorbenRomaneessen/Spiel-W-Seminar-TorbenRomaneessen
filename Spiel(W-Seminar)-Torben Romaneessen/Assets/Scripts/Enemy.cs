@@ -55,7 +55,6 @@ public class Enemy : MonoBehaviour
 
     public Transform enemy;
     SpriteRenderer spriteRendererEnemy;
-    public Animator animator;
     private float timePassed = 0;
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 
@@ -72,6 +71,7 @@ public class Enemy : MonoBehaviour
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 =======
         spriteRendererEnemy = GetComponent<SpriteRenderer>();
+<<<<<<< HEAD
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 =======
         spriteRendererEnemy = GetComponent<SpriteRenderer>();
@@ -79,6 +79,8 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
 =======
         spriteRendererEnemy = GetComponent<SpriteRenderer>();
+>>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
+=======
 >>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
     }
 
@@ -119,6 +121,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -126,9 +129,12 @@ public class Enemy : MonoBehaviour
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
         currentHealth -= damage;
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 
+<<<<<<< HEAD
         currenthealthenemy -= damage;
 
         currentHealth -= damage;
@@ -146,6 +152,8 @@ public class Enemy : MonoBehaviour
 <<<<<<< HEAD
         if (currenthealthenemy <= 0)
 
+=======
+>>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
 =======
 >>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
         if (currentHealth <= 0)
@@ -196,6 +204,7 @@ public class Enemy : MonoBehaviour
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 =======
         Debug.Log("Enemy died!");
+<<<<<<< HEAD
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
 =======
         Debug.Log("Enemy died!");
@@ -231,6 +240,9 @@ public class Enemy : MonoBehaviour
      
     
 >>>>>>> parent of 7c097d5 (Versuch Fehler CS0246 zu beheben)
+=======
+    }
+>>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
 
     private IEnumerator EnemyMovement()
     {
