@@ -19,15 +19,24 @@ public class Enemy : MonoBehaviour
     int currentHealth;
 
     public Transform enemy;
+<<<<<<< HEAD
     SpriteRenderer spriterendererenemy;
     public Animator animator;
     private float timepassed = 0;
+=======
+    SpriteRenderer spriteRendererEnemy;
+    private float timePassed = 0;
+>>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
 
     public void Awake()
     {
         enemy = GetComponent<Transform>();
+<<<<<<< HEAD
         spriterendererenemy = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+=======
+        spriteRendererEnemy = GetComponent<SpriteRenderer>();
+>>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
     }
 
     void Start()
@@ -54,6 +63,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+<<<<<<< HEAD
         this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -66,6 +76,8 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
 
 =======
+=======
+>>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
         currentHealth -= damage;
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 
@@ -73,8 +85,11 @@ public class Enemy : MonoBehaviour
 
 <<<<<<< HEAD
 
+<<<<<<< HEAD
         if (currenthealthenemy <= 0)
 
+=======
+>>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
         if (currentHealth <= 0)
 
 <<<<<<< HEAD
@@ -92,6 +107,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
 
+<<<<<<< HEAD
         Debug.Log("enemy died!");
 
         animator.SetBool("dead", true);
@@ -102,6 +118,10 @@ public class Enemy : MonoBehaviour
 
 
 
+=======
+        Debug.Log("Enemy died!");
+    }
+>>>>>>> parent of 9bcfaff (Turtle-Die/Hurt Animation)
 
     private IEnumerator EnemyMovement()
     {
