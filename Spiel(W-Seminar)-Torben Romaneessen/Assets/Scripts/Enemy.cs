@@ -5,10 +5,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
+<<<<<<< HEAD
 
     public int maxhealthenemy = 100;
     int currenthealthenemy;
 
+=======
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
     public int maxHealth = 100;
     int currentHealth;
 
@@ -26,11 +29,15 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+<<<<<<< HEAD
 
         currenthealthenemy = maxhealthenemy;
 
         currentHealth = maxHealth;
 
+=======
+        currentHealth = maxHealth;
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
     }
 
     private void Update()
@@ -41,6 +48,10 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
+<<<<<<< HEAD
+=======
+        currentHealth -= damage;
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 
         currenthealthenemy -= damage;
 
@@ -54,6 +65,10 @@ public class Enemy : MonoBehaviour
 
         if (currentHealth <= 0)
 
+<<<<<<< HEAD
+=======
+        if (currentHealth <= 0)
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
         {
             Die();
         }

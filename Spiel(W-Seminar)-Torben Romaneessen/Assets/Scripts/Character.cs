@@ -31,6 +31,7 @@ public class Character : MonoBehaviour
     private string jumpAnimation = "Jump";
     private string idleAnimation = "Idle";
     private string attackAnimation = "Attack";
+    //private string dashAnimation = "Dash";
 
     private string takeDamageAnimation = "TakeDamage";
 
@@ -83,7 +84,10 @@ public class Character : MonoBehaviour
         FlipCharacter();
         AttackCooldown();
 
+<<<<<<< HEAD
         DamageingObjects();
+=======
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
         //StartCoroutine(Dash());
     }
 
@@ -278,6 +282,7 @@ public class Character : MonoBehaviour
             }
         }
     }
+<<<<<<< HEAD
 
 
 
@@ -311,6 +316,8 @@ public class Character : MonoBehaviour
         //GetComponent<Collider2D>().enabled = false;
         //this.enabled = false;
     }
+=======
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 }
 
     //private ienumerator dash()
