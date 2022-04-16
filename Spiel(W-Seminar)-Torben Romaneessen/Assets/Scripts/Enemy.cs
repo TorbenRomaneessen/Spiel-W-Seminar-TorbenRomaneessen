@@ -6,10 +6,13 @@ public class Enemy : MonoBehaviour
 {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public int maxhealthenemy = 100;
     int currenthealthenemy;
 
+=======
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 =======
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
     public int maxHealth = 100;
@@ -30,11 +33,15 @@ public class Enemy : MonoBehaviour
     void Start()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         currenthealthenemy = maxhealthenemy;
 
         currentHealth = maxHealth;
 
+=======
+        currentHealth = maxHealth;
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 =======
         currentHealth = maxHealth;
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
@@ -49,6 +56,7 @@ public class Enemy : MonoBehaviour
     {
         this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         currentHealth -= damage;
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
@@ -57,15 +65,22 @@ public class Enemy : MonoBehaviour
 
         currentHealth -= damage;
 
+=======
+        currentHealth -= damage;
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 
         animator.SetTrigger("hurt");
 
+<<<<<<< HEAD
 
         if (currenthealthenemy <= 0)
 
         if (currentHealth <= 0)
 
 <<<<<<< HEAD
+=======
+        if (currentHealth <= 0)
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 =======
         if (currentHealth <= 0)
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)

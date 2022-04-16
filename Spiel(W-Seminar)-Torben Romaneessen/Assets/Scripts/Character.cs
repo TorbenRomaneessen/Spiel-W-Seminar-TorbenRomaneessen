@@ -32,10 +32,13 @@ public class Character : MonoBehaviour
     private string idleAnimation = "Idle";
     private string attackAnimation = "Attack";
     //private string dashAnimation = "Dash";
+<<<<<<< HEAD
 
     private string takeDamageAnimation = "TakeDamage";
 
     //private string dashAnimation = "Dash";
+=======
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 
     private bool isGrounded = false;
     private string groundTag = "Ground";
@@ -85,7 +88,10 @@ public class Character : MonoBehaviour
         AttackCooldown();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         DamageingObjects();
+=======
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 =======
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
         //StartCoroutine(Dash());
@@ -283,6 +289,7 @@ public class Character : MonoBehaviour
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -316,6 +323,8 @@ public class Character : MonoBehaviour
         //GetComponent<Collider2D>().enabled = false;
         //this.enabled = false;
     }
+=======
+>>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 =======
 >>>>>>> parent of 1c1bfb5 (Spieler erleidet Schaden)
 }
