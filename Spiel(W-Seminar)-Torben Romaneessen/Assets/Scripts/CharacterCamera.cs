@@ -17,21 +17,9 @@ public class CharacterCamera : MonoBehaviour
 
     void Update()
     {
-        //CheckForDash();
         temPos = transform.position;
         temPos.x = character.position.x;
 
         transform.position = temPos;
-
-
     }
-
-    //private void CheckForDash()
-    //{
-    //if (Input.GetKeyDown(KeyCode.F))
-    //{
-    //this.temPos = new Vector3(temPos.x + 2.2f,temPos.y, temPos.z);
-    //}
-    //}
-
 }

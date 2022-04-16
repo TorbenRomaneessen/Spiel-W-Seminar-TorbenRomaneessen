@@ -26,11 +26,12 @@ public class Character : MonoBehaviour
     //private SpriteRenderer spriteRenderer;
 
     [SerializeField]
-    private Animator animator;
+    private Animator animator; 
     private string runAnimation = "Run";
     private string jumpAnimation = "Jump";
     private string idleAnimation = "Idle";
     private string attackAnimation = "Attack";
+    //private string dashAnimation = "Dash";
 
     private string takeDamageAnimation = "TakeDamage";
 
@@ -82,9 +83,12 @@ public class Character : MonoBehaviour
 
         AttackCooldown();
 
+        //StartCoroutine(Dash());
+    }
+
         //DamageingObjects();    
 
-        Attack();
+        //Attack();
         
         /*if (Time.time >= nextAttackTime)
         {
@@ -94,7 +98,7 @@ public class Character : MonoBehaviour
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }*/  
-    }
+    
 
     private void FixedUpdate()
     {
@@ -270,6 +274,8 @@ public class Character : MonoBehaviour
 
     }
 
+    
+
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
@@ -288,7 +294,31 @@ public class Character : MonoBehaviour
             }
         }
     }
+}
 
+    //private ienumerator dash()
+    //{
+    //    if (input.getkeydown(keycode.f) && movementx > 0)
+    //    {
+    //        animator.setbool(dashanimation, true);
+    //        animator.setbool(jumpanimation, false);
+    //        animator.setbool(walkanimation, false);
+    //        animator.setbool(idleanimation, false);
+
+    //        yield return new waitforseconds(0.4f);
+    //        animator.setbool(dashanimation, false);
+    //        animator.setbool(jumpanimation, false);
+    //        animator.setbool(walkanimation, false);
+    //        animator.setbool(idleanimation, true);
+    //        this.transform.position = new vector3(player.position.x + dashforce, player.position.y, player.position.z);
+    //    }
+
+    //    else if (input.getkeydown(keycode.f) && movementx < 0)
+    //    {
+    //        animator.setbool(dashanimation, true);
+    //        animator.setbool(jumpanimation, false);
+    //        animator.setbool(walkanimation, false);
+    //        animator.setbool(idleanimation, false);
 
     //public void DamageingObjects()
     //{
@@ -317,7 +347,7 @@ public class Character : MonoBehaviour
     //    GetComponent<Collider2D>().enabled = false;
     //    this.enabled = false;
     //}
-}
+
 
     //private ienumerator dash()
     //{

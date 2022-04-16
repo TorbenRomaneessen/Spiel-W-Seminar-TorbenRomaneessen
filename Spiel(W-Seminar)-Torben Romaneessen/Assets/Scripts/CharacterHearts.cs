@@ -37,7 +37,7 @@ public class CharacterHearts : MonoBehaviour
     }*/
     public void DamageingObjects()
     {
-        if(CollisionWithThorns == true)
+        if (CollisionWithThorns == true)
         {
             TakeDamage(1);
         }

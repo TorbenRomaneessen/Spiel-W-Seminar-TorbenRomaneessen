@@ -12,7 +12,6 @@ public class Parallax : MonoBehaviour
     {
         startposition = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
-
     }
 
     
@@ -30,8 +29,6 @@ public class Parallax : MonoBehaviour
         else if (temp < startposition - length)
         {
             startposition -= length;
-        }
-
-    */}
-
+        }*/
+    }
 }
