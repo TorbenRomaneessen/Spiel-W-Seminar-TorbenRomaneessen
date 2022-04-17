@@ -4,74 +4,67 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    //////////CharacterCharacteristics//////////
     [SerializeField]
     int currentHealthPlayer = 5;
-
-    private string ThornsTag = "Thorns";
-    private bool CollisionWithThorns;
-
     [SerializeField]
     private float speed = 10f;
-
-    //public PlayerHearts = 5f;
-    //public CharacterHearts CharacterHearts;
-
     [SerializeField]
     private float jumpForce = 10f;
+    public float attackrange = 0.5f;
+    public int attackDamage = 1;
+    public float attackRate = 2f;
+    private float nextAttackTime = 0f;
+    private float counter;
 
-
-    private float movementX;
-
+    //////////CharacterProperties//////////
     public Transform character;
-
     [SerializeField]
     private Rigidbody2D rigidBody2D;
-
     [SerializeField]
     private Animator animator;
+    public Transform attackPoint;
+    public LayerMask enemyLayers;
+
+    //////////Animations//////////
     private string runAnimation = "Run";
     private string jumpAnimation = "Jump";
     private string idleAnimation = "Idle";
     private string attackAnimation = "Attack";
     private string takeDamageAnimation = "TakeDamage";
 
-    private bool isGrounded = false;
+    //////////Tags//////////
+    private string ThornsTag = "Thorns";
     private string groundTag = "Ground";
 
+    private float movementX;
+
+    //////////Boolean//////////
+    private bool CollisionWithThorns;
+    private bool isGrounded = false;
     private bool canDoubleJump;
-
-    public Transform attackPoint;
-    public float attackrange = 0.5f;
-    public LayerMask enemyLayers;
-    public int attackDamage = 40;
-
-    public float attackRate = 2f;
-    private float nextAttackTime = 0f;
-
     public bool isFlipped = false;
 
-    private float counter;
-
+  
 
     public void Awake()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         character = GetComponent<Transform>();
-        //CharacterHearts CharacterHearts = new CharacterHearts(5);
-
     }
 
 
     void Start()
     {
-        //currentHealth = maxHealth;
+
     }
 
 
     void Update()
     {
         counter += Time.deltaTime;
+
         CharacterRun();
         AnimateWalk();
         DoubleJump();
@@ -91,7 +84,6 @@ public class Character : MonoBehaviour
     void CharacterRun()
     {
         movementX = Input.GetAxisRaw("Horizontal");
-
         transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * speed;
     }
 
@@ -121,7 +113,6 @@ public class Character : MonoBehaviour
         {
             animator.SetTrigger("TakeOf");
             isGrounded = false;
-
             rigidBody2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
 
@@ -129,6 +120,7 @@ public class Character : MonoBehaviour
         {
             animator.SetBool("Jump", false);
         }
+
         else
         {
             animator.SetBool("Jump", true);
@@ -153,6 +145,7 @@ public class Character : MonoBehaviour
             CollisionWithThorns = true;
             Debug.Log("Player has been hit");
         }
+
         else
         {
             CollisionWithThorns = false;
@@ -162,19 +155,20 @@ public class Character : MonoBehaviour
 
     void AnimateWalk()
     {
-
         if (movementX > 0 && isGrounded)
         {
             animator.SetBool(runAnimation, true);
             animator.SetBool(jumpAnimation, false);
             animator.SetBool(idleAnimation, false);
         }
+
         if (movementX == 0 && isGrounded)
         {
             animator.SetBool(idleAnimation, true);
             animator.SetBool(jumpAnimation, false);
             animator.SetBool(runAnimation, false);
         }
+
         if (movementX < 0 && isGrounded)
         {
             animator.SetBool(runAnimation, true);
@@ -220,6 +214,7 @@ public class Character : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackrange);
     }
 
+
     private void AttackCooldown()
     {
         if (Time.time >= nextAttackTime)
@@ -237,7 +232,7 @@ public class Character : MonoBehaviour
     {
         if (CollisionWithThorns == true && counter >= 2)
         {
-            //animator.SetTrigger(takeDamageAnimation);
+            animator.SetTrigger(takeDamageAnimation);
             currentHealthPlayer -= 1;
 
             Debug.Log("Player has been hit");
@@ -260,8 +255,6 @@ public class Character : MonoBehaviour
 
         this.transform.position = new Vector3(-35, 5, 0);
         currentHealthPlayer = 5;
-        //GetComponent<Collider2D>().enabled = false;
-        //this.enabled = false;
     }
 }
 

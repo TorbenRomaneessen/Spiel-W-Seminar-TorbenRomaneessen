@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - ThornsTag
   - Thorns
+  - character
   layers:
   - Default
   - TransparentFX
