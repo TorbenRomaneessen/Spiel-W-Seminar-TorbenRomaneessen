@@ -9,6 +9,7 @@ TagManager:
   - ThornsTag
   - Thorns
   - character
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -63,4 +64,7 @@ TagManager:
     locked: 0
   - name: Decoration2
     uniqueID: 1909600577
+    locked: 0
+  - name: Coin
+    uniqueID: 760927979
     locked: 0

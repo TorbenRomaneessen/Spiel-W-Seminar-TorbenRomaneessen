@@ -36,6 +36,7 @@ public class Character : MonoBehaviour
     //////////Tags//////////
     private string ThornsTag = "Thorns";
     private string groundTag = "Ground";
+    private string coinTag = "Coin";
 
     private float movementX;
 
@@ -149,6 +150,11 @@ public class Character : MonoBehaviour
         else
         {
             CollisionWithThorns = false;
+        }
+
+        if(collision.gameObject.CompareTag(coinTag))
+        {
+            Destroy(collision.gameObject);
         }
     }
 
