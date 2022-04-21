@@ -3363,6 +3363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
   resolutionDropdown: {fileID: 2063135397}
+  slider: {fileID: 520984746}
 --- !u!1 &1454589352
 GameObject:
   m_ObjectHideFlags: 0
@@ -4004,6 +4005,10 @@ PrefabInstance:
       propertyPath: sounds.Array.data[0].name
       value: Theme
       objectReference: {fileID: 0}
+    - target: {fileID: 5603081502349459870, guid: d07aa96a82400104f8abcc8559c4fb9c, type: 3}
+      propertyPath: sounds.Array.data[0].group
+      value: 
+      objectReference: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
     - target: {fileID: 5603081502349459870, guid: d07aa96a82400104f8abcc8559c4fb9c, type: 3}
       propertyPath: sounds.Array.data[0].pitch
       value: 1

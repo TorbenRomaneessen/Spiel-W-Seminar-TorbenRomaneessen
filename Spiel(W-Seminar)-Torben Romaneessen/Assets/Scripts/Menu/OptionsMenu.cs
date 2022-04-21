@@ -8,10 +8,16 @@ public class OptionsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public TMPro.TMP_Dropdown resolutionDropdown;
+    public Slider slider;
 
     Resolution[] resolutions;
 
 
+
+    private void Awake()
+    {
+        slider.value = PlayerPrefs.GetInt("sliderSavedNumber");
+    }
 
 
     private void Start()
@@ -36,6 +42,14 @@ public class OptionsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        audioMixer.SetFloat("volume", PlayerPrefs.GetInt("sliderSavedNumber"));
+    }
+
+
+    private void Update()
+    {
+        PlayerPrefs.SetInt("sliderSavedNumber", (int)slider.value);
     }
 
 
@@ -44,6 +58,7 @@ public class OptionsMenu : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
+
 
     public void SetVolume(float volume)
     {
