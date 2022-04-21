@@ -68,3 +68,6 @@ TagManager:
   - name: Coin
     uniqueID: 760927979
     locked: 0
+  - name: DashTrail
+    uniqueID: 509590661
+    locked: 0

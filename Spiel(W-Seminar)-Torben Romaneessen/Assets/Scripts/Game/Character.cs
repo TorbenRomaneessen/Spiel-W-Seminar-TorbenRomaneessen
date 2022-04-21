@@ -16,6 +16,12 @@ public class Character : MonoBehaviour
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
     private float counter;
+    private float invincibleTime = 0f;
+    private float dashRate = 2f;
+    private float dashingVelocity = 20f;
+    private float dashingTime = 0.1f;
+    private Vector2 dashingDir;
+
 
     //////////CharacterProperties//////////
     public Transform character;
@@ -25,6 +31,7 @@ public class Character : MonoBehaviour
     private Animator animator;
     public Transform attackPoint;
     public LayerMask enemyLayers;
+    private TrailRenderer trailRenderer;
 
     //////////Animations//////////
     private string runAnimation = "Run";
@@ -45,6 +52,8 @@ public class Character : MonoBehaviour
     private bool isGrounded = false;
     private bool canDoubleJump;
     public bool isFlipped = false;
+    private bool isDashing;
+    private bool canDash;
 
   
 
@@ -53,6 +62,7 @@ public class Character : MonoBehaviour
         rigidBody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         character = GetComponent<Transform>();
+        trailRenderer = GetComponent<TrailRenderer>();
     }
 
 
@@ -68,11 +78,12 @@ public class Character : MonoBehaviour
 
         CharacterRun();
         AnimateWalk();
-        DoubleJump();
+        //DoubleJump();
         PlayerJump();
         FlipCharacter();
         AttackCooldown();
         DamageingObjects();
+        Dash();
     }
 
 
@@ -89,23 +100,23 @@ public class Character : MonoBehaviour
     }
 
 
-    private void DoubleJump()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (isGrounded)
-            {
-                PlayerJump();
-                canDoubleJump = true;
-            }
+    //private void DoubleJump()
+    //{
+    //    if (Input.GetButtonDown("Jump"))
+    //    {
+    //        if (isGrounded)
+    //        {
+    //            PlayerJump();
+    //            canDoubleJump = true;
+    //        }
 
-            else if (canDoubleJump)
-            {
-                PlayerJump();
-                canDoubleJump = false;
-            }
-        }
-    }
+    //        else if (canDoubleJump)
+    //        {
+    //            PlayerJump();
+    //            canDoubleJump = false;
+    //        }
+    //    }
+    //}
 
 
     void PlayerJump()
@@ -134,6 +145,7 @@ public class Character : MonoBehaviour
         if (collision.gameObject.CompareTag(groundTag))
         {
             isGrounded = true;
+            canDash = true;
         }
 
         else
@@ -261,6 +273,41 @@ public class Character : MonoBehaviour
 
         this.transform.position = new Vector3(-35, 5, 0);
         currentHealthPlayer = 5;
+    }
+
+
+    private void Dash()
+    {
+        if(Input.GetButtonDown("Dash") && canDash && Time.time >= invincibleTime)
+        {
+            isDashing = true;
+            canDash = false;
+            trailRenderer.emitting = true;
+            dashingDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+            if (dashingDir == Vector2.zero)
+            {
+                dashingDir = new Vector2(transform.localScale.x, 0);
+            }
+
+            StartCoroutine("StopDashing");
+            invincibleTime  = Time.time + 1f / dashRate;
+        }
+
+        if (isDashing)
+        {
+            rigidBody2D.velocity = dashingDir.normalized * dashingVelocity;
+            return;
+        }
+    }
+
+
+    private IEnumerator StopDashing()
+    {
+        yield return new WaitForSeconds(dashingTime);
+        trailRenderer.emitting  = false;
+        isDashing = false;
+        rigidBody2D.velocity = dashingDir.normalized * 0;
     }
 }
 
