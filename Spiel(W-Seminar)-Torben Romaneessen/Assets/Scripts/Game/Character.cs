@@ -32,6 +32,7 @@ public class Character : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
     private TrailRenderer trailRenderer;
+    public ParticleSystem dashTrail;
 
     //////////Animations//////////
     private string runAnimation = "Run";
@@ -218,11 +219,13 @@ public class Character : MonoBehaviour
     {
         if (movementX < 0)
         {
+            //CreateDust();
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
         else if (movementX > 0)
         {
+            //CreateDust();
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
@@ -299,6 +302,7 @@ public class Character : MonoBehaviour
         if(Input.GetButtonDown("Dash") && canDash && Time.time >= invincibleTime)
         {
             animator.SetTrigger(dashAnimation);
+            CreateDashTrail();
             isDashing = true;
             canDash = false;
             trailRenderer.emitting = true;
@@ -327,6 +331,11 @@ public class Character : MonoBehaviour
         trailRenderer.emitting  = false;
         isDashing = false;
         rigidBody2D.velocity = dashingDir.normalized * 0;
+    }
+
+    private void CreateDashTrail()
+    {
+        dashTrail.Play();
     }
 }
 
