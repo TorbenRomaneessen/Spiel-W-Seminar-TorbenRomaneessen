@@ -131,6 +131,11 @@ public class Character : MonoBehaviour
             rigidBody2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
 
+        if(Input.GetButtonUp("Jump") && rigidBody2D.velocity.y > 0)
+        {
+            rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x,0);
+        }
+
         if (isGrounded == true)
         {
             animator.SetBool("Jump", false);
