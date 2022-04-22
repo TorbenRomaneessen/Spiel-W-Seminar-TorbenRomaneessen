@@ -39,16 +39,19 @@ public class Character : MonoBehaviour
     private string idleAnimation = "Idle";
     private string attackAnimation = "Attack";
     private string takeDamageAnimation = "TakeDamage";
+    private string dashAnimation = "Dash";
 
     //////////Tags//////////
     private string ThornsTag = "Thorns";
     private string groundTag = "Ground";
     private string coinTag = "Coin";
+    private string enemyTag = "Enemy";
 
     private float movementX;
 
     //////////Boolean//////////
     private bool CollisionWithThorns;
+    private bool CollisionWithEnemy;
     private bool isGrounded = false;
     private bool canDoubleJump;
     public bool isFlipped = false;
@@ -168,6 +171,16 @@ public class Character : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+
+        if(collision.gameObject.CompareTag(enemyTag))
+        {
+            CollisionWithEnemy = true;
+        }
+
+        else
+        {
+            CollisionWithEnemy = false;
+        }
     }
 
 
@@ -248,7 +261,7 @@ public class Character : MonoBehaviour
 
     public void DamageingObjects()
     {
-        if (CollisionWithThorns == true && counter >= 2)
+        if ((CollisionWithThorns == true || CollisionWithEnemy == true) && counter >= 2)
         {
             animator.SetTrigger(takeDamageAnimation);
             currentHealthPlayer -= 1;
@@ -280,6 +293,7 @@ public class Character : MonoBehaviour
     {
         if(Input.GetButtonDown("Dash") && canDash && Time.time >= invincibleTime)
         {
+            animator.SetTrigger(dashAnimation);
             isDashing = true;
             canDash = false;
             trailRenderer.emitting = true;

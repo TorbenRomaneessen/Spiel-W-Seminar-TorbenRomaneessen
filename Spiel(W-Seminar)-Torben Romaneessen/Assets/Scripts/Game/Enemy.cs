@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
     {
         this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
         currenthealthenemy -= damage;
-        animator.SetTrigger("hurt");
+        animator.SetTrigger("Hurt");
 
         if (currenthealthenemy <= 0)
         {
@@ -51,9 +51,9 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("enemy died!");
+        Debug.Log("Enemy died!");
 
-        animator.SetBool("dead", true);
+        animator.SetBool("Dead", true);
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;

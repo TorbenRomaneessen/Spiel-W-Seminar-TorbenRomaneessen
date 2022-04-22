@@ -10,6 +10,7 @@ TagManager:
   - Thorns
   - character
   - Coin
+  - Enemy
   layers:
   - Default
   - TransparentFX
