@@ -101,6 +101,7 @@ public class Character : MonoBehaviour
     {
         movementX = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * speed;
+        FindObjectOfType<AudioManager>().Play("WalkingSound");
     }
 
 

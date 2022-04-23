@@ -11,6 +11,7 @@ public class Coin : MonoBehaviour
         if(collision.gameObject.CompareTag("Character"))
         {
             ScoreManager.instance2.ChangeScore(coinValue);
+            FindObjectOfType<AudioManager>().Play("Coin");
             //Destroy(collision.gameObject);
             Debug.Log("Coin!");
         }
