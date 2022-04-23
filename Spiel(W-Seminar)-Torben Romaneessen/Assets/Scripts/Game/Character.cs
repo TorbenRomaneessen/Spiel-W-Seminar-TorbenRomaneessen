@@ -33,6 +33,7 @@ public class Character : MonoBehaviour
     public LayerMask enemyLayers;
     private TrailRenderer trailRenderer;
     public ParticleSystem dashTrail;
+    public ParticleSystem dust;
 
     //////////Animations//////////
     private string runAnimation = "Run";
@@ -101,7 +102,6 @@ public class Character : MonoBehaviour
     {
         movementX = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * speed;
-        FindObjectOfType<AudioManager>().Play("Walking");
     }
 
 
@@ -198,6 +198,7 @@ public class Character : MonoBehaviour
             animator.SetBool(runAnimation, true);
             animator.SetBool(jumpAnimation, false);
             animator.SetBool(idleAnimation, false);
+            CreateDust();
         }
 
         if (movementX == 0 && isGrounded)
@@ -212,6 +213,7 @@ public class Character : MonoBehaviour
             animator.SetBool(runAnimation, true);
             animator.SetBool(jumpAnimation, false);
             animator.SetBool(idleAnimation, false);
+            CreateDust();
         }
     }
 
@@ -237,6 +239,8 @@ public class Character : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             animator.SetTrigger(attackAnimation);
+            FindObjectOfType<AudioManager>().Play("AttackSound1");
+            FindObjectOfType<AudioManager>().Play("AttackSound2");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, enemyLayers);
 
             foreach (Collider2D enemy in hitEnemies)
@@ -338,6 +342,11 @@ public class Character : MonoBehaviour
     private void CreateDashTrail()
     {
         dashTrail.Play();
+    }
+
+    private void CreateDust()
+    {
+        dust.Play();
     }
 }
 
