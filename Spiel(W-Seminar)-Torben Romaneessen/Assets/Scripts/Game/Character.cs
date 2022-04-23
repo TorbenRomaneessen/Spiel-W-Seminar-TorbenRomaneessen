@@ -101,7 +101,7 @@ public class Character : MonoBehaviour
     {
         movementX = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * speed;
-        FindObjectOfType<AudioManager>().Play("WalkingSound");
+        FindObjectOfType<AudioManager>().Play("Walking");
     }
 
 
@@ -303,6 +303,7 @@ public class Character : MonoBehaviour
         if(Input.GetButtonDown("Dash") && canDash && Time.time >= invincibleTime)
         {
             animator.SetTrigger(dashAnimation);
+            FindObjectOfType<AudioManager>().Play("Dash");
             CreateDashTrail();
             isDashing = true;
             canDash = false;
