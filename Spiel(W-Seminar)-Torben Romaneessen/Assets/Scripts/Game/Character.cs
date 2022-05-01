@@ -21,6 +21,7 @@ public class Character : MonoBehaviour
     private float dashingVelocity = 20f;
     private float dashingTime = 0.1f;
     private Vector2 dashingDir;
+    public GameObject[] hearts;
 
 
     //////////CharacterProperties//////////
@@ -89,6 +90,7 @@ public class Character : MonoBehaviour
         AttackCooldown();
         DamageingObjects();
         Dash();
+        CheckHearts();
     }
 
 
@@ -272,6 +274,26 @@ public class Character : MonoBehaviour
     }
 
 
+    public void CheckHearts()
+    {
+        if(currentHealthPlayer < 1)
+        {
+            //Destroy(hearts[0].gameObject);
+            hearts[0].gameObject.SetActive(false);
+        }
+
+        else if(currentHealthPlayer < 2)
+        {
+            hearts[1].gameObject.SetActive(false);
+        }
+
+        else if (currentHealthPlayer < 3)
+        {
+            hearts[2].gameObject.SetActive(false);
+        }
+    }
+
+
     public void DamageingObjects()
     {
         if ((CollisionWithThorns == true || CollisionWithEnemy == true) && counter >= 2)
@@ -286,19 +308,22 @@ public class Character : MonoBehaviour
 
         if (currentHealthPlayer <= 0)
         {
-            Die();
+            Respawn();
         }
     }
 
 
-    private void Die()
+    private void Respawn()
     {
         Debug.Log("Character died!");
 
         //animator.SetBool("Dead", true);
 
         this.transform.position = new Vector3(-35, 5, 0);
-        currentHealthPlayer = 5;
+        currentHealthPlayer = 3;
+        hearts[0].gameObject.SetActive(true);
+        hearts[1].gameObject.SetActive(true);
+        hearts[2].gameObject.SetActive(true);
     }
 
 

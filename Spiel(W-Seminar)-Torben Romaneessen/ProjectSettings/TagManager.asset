@@ -72,3 +72,6 @@ TagManager:
   - name: DashTrail
     uniqueID: 509590661
     locked: 0
+  - name: Heart
+    uniqueID: 980472775
+    locked: 0
