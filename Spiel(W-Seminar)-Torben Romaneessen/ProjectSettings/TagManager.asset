@@ -63,14 +63,14 @@ TagManager:
   - name: Enemy
     uniqueID: 2795337375
     locked: 0
-  - name: Decoration2
-    uniqueID: 1909600577
-    locked: 0
   - name: Coin
     uniqueID: 760927979
     locked: 0
   - name: DashTrail
     uniqueID: 509590661
+    locked: 0
+  - name: Decoration2
+    uniqueID: 1909600577
     locked: 0
   - name: Heart
     uniqueID: 980472775

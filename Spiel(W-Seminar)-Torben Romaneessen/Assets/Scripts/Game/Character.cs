@@ -300,6 +300,7 @@ public class Character : MonoBehaviour
         {
             animator.SetTrigger(takeDamageAnimation);
             currentHealthPlayer -= 1;
+            canDash = true;
 
             Debug.Log("Player has been hit");
             counter = 0;
