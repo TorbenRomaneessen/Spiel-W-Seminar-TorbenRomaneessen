@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
 {
     //////////CharacterCharacteristics//////////
     [SerializeField]
-    int currentHealthPlayer = 5;
+    int currentHealthPlayer = 3;
     [SerializeField]
     private float speed = 10f;
     [SerializeField]

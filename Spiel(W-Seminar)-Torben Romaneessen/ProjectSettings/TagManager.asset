@@ -51,14 +51,14 @@ TagManager:
   - name: Background
     uniqueID: 948468073
     locked: 0
-  - name: Decoration
+  - name: Decoration 1
     uniqueID: 982456101
-    locked: 0
-  - name: Ground
-    uniqueID: 3164945235
     locked: 0
   - name: Character
     uniqueID: 1220406661
+    locked: 0
+  - name: Ground 1
+    uniqueID: 108750753
     locked: 0
   - name: Enemy
     uniqueID: 2795337375
@@ -69,13 +69,13 @@ TagManager:
   - name: DashTrail
     uniqueID: 509590661
     locked: 0
-  - name: Decoration2
+  - name: Decoration 2
     uniqueID: 1909600577
     locked: 0
-  - name: Ground 2
+  - name: 'Ground '
     uniqueID: 3097921033
     locked: 0
-  - name: Decoration3
+  - name: Decoration 3
     uniqueID: 3100372645
     locked: 0
   - name: Heart
