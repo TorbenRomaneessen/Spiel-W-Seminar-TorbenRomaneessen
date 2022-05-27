@@ -72,6 +72,12 @@ TagManager:
   - name: Decoration2
     uniqueID: 1909600577
     locked: 0
+  - name: Ground 2
+    uniqueID: 3097921033
+    locked: 0
+  - name: Decoration3
+    uniqueID: 3100372645
+    locked: 0
   - name: Heart
     uniqueID: 980472775
     locked: 0

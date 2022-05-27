@@ -238,7 +238,7 @@ public class Character : MonoBehaviour
 
     private void Attack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Fire1"))
         {
             animator.SetTrigger(attackAnimation);
             FindObjectOfType<AudioManager>().Play("AttackSound1");
