@@ -50,6 +50,7 @@ public class Character : MonoBehaviour
     private string coinTag = "Coin";
     private string enemyTag = "Enemy";
 
+
     private float movementX;
 
     //////////Boolean//////////
