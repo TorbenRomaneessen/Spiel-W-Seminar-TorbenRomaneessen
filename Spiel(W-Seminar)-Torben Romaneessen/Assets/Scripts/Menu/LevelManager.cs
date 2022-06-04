@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     int levelsUnlocked;
+    public static LevelManager instance;
 
     public Button[] buttons;
 
@@ -39,10 +40,10 @@ public class LevelManager : MonoBehaviour
    {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
 
-        if(currentLevel >= PlayerPrefs.GetInt("levelsUnlocked"))
-        {
+        //if(currentLevel >= PlayerPrefs.GetInt("levelsUnlocked"))
+        //{
             PlayerPrefs.SetInt("levelsUnlocked", currentLevel + 1);
-        }
+       // }
         Debug.Log("LEVEL " + PlayerPrefs.GetInt("levelsUnlocked") + " UNLOCKED");  
    }
 

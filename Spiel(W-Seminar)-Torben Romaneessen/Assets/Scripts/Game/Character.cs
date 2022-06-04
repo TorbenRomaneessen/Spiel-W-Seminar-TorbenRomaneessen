@@ -23,6 +23,8 @@ public class Character : MonoBehaviour
     private Vector2 dashingDir;
     public GameObject[] hearts;
 
+    public static Character instance;
+
 
     //////////CharacterProperties//////////
     public Transform character;
@@ -61,6 +63,7 @@ public class Character : MonoBehaviour
     public bool isFlipped = false;
     private bool isDashing;
     private bool canDash;
+    public bool levelPassed;
 
   
 
@@ -191,6 +194,13 @@ public class Character : MonoBehaviour
         {
             CollisionWithEnemy = false;
         }
+
+        if (collision.gameObject.CompareTag("EndCoin"))
+        {
+            //levelPassed = true;
+            //LevelManager.instance.LevelPassed();
+            //levelPassed = false;
+        }
     }
 
 
@@ -297,7 +307,7 @@ public class Character : MonoBehaviour
 
     public void DamageingObjects()
     {
-        if ((CollisionWithThorns == true || CollisionWithEnemy == true) && counter >= 2)
+        if ((CollisionWithThorns == true || CollisionWithEnemy == true) && counter >= 1)
         {
             animator.SetTrigger(takeDamageAnimation);
             currentHealthPlayer -= 1;
