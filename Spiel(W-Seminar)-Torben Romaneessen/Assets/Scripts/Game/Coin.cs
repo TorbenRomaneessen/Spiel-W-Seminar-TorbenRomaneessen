@@ -16,9 +16,9 @@ public class Coin : MonoBehaviour
             Debug.Log("Coin!");
         }
 
-        if (collision.gameObject.CompareTag("Character"))
-        {
-            LevelManager.instance.LevelPassed();
-        }
+        //if (collision.gameObject.CompareTag("Character"))
+        //{
+        //    LevelManager.instance.LevelPassed();
+        //}
     }
 }

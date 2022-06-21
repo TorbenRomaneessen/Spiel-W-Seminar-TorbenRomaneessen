@@ -12,6 +12,7 @@ TagManager:
   - Coin
   - Enemy
   - EndCoin
+  - Platform
   layers:
   - Default
   - TransparentFX

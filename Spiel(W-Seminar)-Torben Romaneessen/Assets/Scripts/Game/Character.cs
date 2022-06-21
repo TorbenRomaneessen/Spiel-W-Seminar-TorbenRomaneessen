@@ -24,6 +24,7 @@ public class Character : MonoBehaviour
     public GameObject[] hearts;
 
     public static Character instance;
+    //public GameObject characters;
 
 
     //////////CharacterProperties//////////
@@ -195,13 +196,27 @@ public class Character : MonoBehaviour
             CollisionWithEnemy = false;
         }
 
-        if (collision.gameObject.CompareTag("EndCoin"))
+        if(collision.gameObject.CompareTag("Platform"))
         {
-            //levelPassed = true;
-            //LevelManager.instance.LevelPassed();
-            //levelPassed = false;
+            character.transform.parent = collision.transform;
+            isGrounded = true;
+            canDash = true;
+            //if(Input.anyKeyDown && collision.gameObject.CompareTag("Platform"))
+            //{
+            //    animator.SetBool(runAnimation, true);
+            //    animator.SetBool(idleAnimation, true);
+            //}
         }
     }
+
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if(collision.gameObject.CompareTag("Platform"))
+    //    {
+    //        character.transform.parent = null;
+    //    }
+    //}
 
 
     void AnimateWalk()
@@ -311,11 +326,12 @@ public class Character : MonoBehaviour
         {
             animator.SetTrigger(takeDamageAnimation);
             currentHealthPlayer -= 1;
-            canDash = true;
+            //canDash = true;
 
             Debug.Log("Player has been hit");
             counter = 0;
-            this.transform.position = new Vector3(character.position.x - 1f, character.position.y + 7f, character.position.z);
+            transform.position = CheckPoint.ReachedPoint;
+            //transform.position = new Vector3(character.position.x -19, character.position.y + 7f, character.position.z);
         }
 
         if (currentHealthPlayer <= 0)
