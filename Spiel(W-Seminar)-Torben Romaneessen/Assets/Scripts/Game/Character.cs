@@ -207,12 +207,17 @@ public class Character : MonoBehaviour
             //    animator.SetBool(idleAnimation, true);
             //}
         }
+
+        else
+        {
+            character.transform.parent = null;
+        }
     }
 
 
     //private void OnTriggerExit2D(Collider2D collision)
     //{
-    //    if(collision.gameObject.CompareTag("Platform"))
+    //    if (collision.gameObject.CompareTag("Platform"))
     //    {
     //        character.transform.parent = null;
     //    }

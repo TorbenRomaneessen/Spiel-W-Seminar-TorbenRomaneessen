@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public Transform position1, position2;
+    public Transform position1, position2, position3, position4;
     public float speed;
     public Transform startposition;
 
@@ -26,6 +26,16 @@ public class MovingPlatform : MonoBehaviour
         }
 
         if(transform.position == position2.position)
+        {
+            nextposition = position3.position;
+        }
+
+        if (transform.position == position3.position)
+        {
+            nextposition = position4.position;
+        }
+
+        if (transform.position == position4.position)
         {
             nextposition = position1.position;
         }
