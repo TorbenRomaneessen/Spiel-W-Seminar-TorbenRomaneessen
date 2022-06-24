@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsOver = false;
     public GameObject pauseMenuUI;
     public GameObject gameOverUI;
+    public GameObject levelCompletedUI;
 
 
 
@@ -32,6 +33,12 @@ public class PauseMenu : MonoBehaviour
             GameOver();
             GameIsOver = true;
             Character.playerDied = false;
+        }
+
+        if(EndPoint.LevelCompleted == true)
+        {
+            LevelCompleted();
+            EndPoint.LevelCompleted = false;
         }
     }
 
@@ -57,6 +64,20 @@ public class PauseMenu : MonoBehaviour
     {
         gameOverUI.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+
+    private void LevelCompleted()
+    {
+        levelCompletedUI.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1f;
     }
 
 

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndPoint : MonoBehaviour
 {
+    public static bool LevelCompleted;
     public void LevelPassed()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
@@ -14,6 +15,8 @@ public class EndPoint : MonoBehaviour
             PlayerPrefs.SetInt("levelsUnlocked", currentLevel + 1);
         }
         Debug.Log("LEVEL " + PlayerPrefs.GetInt("levelsUnlocked") + " UNLOCKED");
+
+        LevelCompleted = true;
     }
 
 

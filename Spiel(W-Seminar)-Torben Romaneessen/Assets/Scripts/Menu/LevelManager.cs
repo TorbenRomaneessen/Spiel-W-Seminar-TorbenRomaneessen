@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
 {
     int levelsUnlocked;
     public static LevelManager instance;
+    public GameObject levelPage1;
+    public GameObject levelPage2;
 
     public Button[] buttons;
 
@@ -38,5 +40,18 @@ public class LevelManager : MonoBehaviour
     public void LoadLevel(int levelIndex)
     {
         SceneManager.LoadScene(levelIndex);
+    }
+
+
+    public void LoadNextPage()
+    {
+        levelPage1.SetActive(false);
+        levelPage2.SetActive(true);
+    }
+
+    public void LoadPreviousPage()
+    {
+        levelPage1.SetActive(true);
+        levelPage2.SetActive(false);
     }
 }
