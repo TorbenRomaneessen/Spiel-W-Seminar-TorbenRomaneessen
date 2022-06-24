@@ -6,15 +6,17 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public static bool GameIsOver = false;
     public GameObject pauseMenuUI;
+    public GameObject gameOverUI;
 
 
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && GameIsOver == false)
         {
-            if(GameIsPaused)
+            if(GameIsPaused )
             {
                 Resume();
             }
@@ -24,12 +26,20 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+        if(Character.playerDied == true)
+        {
+            GameOver();
+            GameIsOver = true;
+            Character.playerDied = false;
+        }
     }
 
 
    public void Resume()
    {
         pauseMenuUI.SetActive(false);
+        //gameOverUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
    }
@@ -41,6 +51,22 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
    }
+
+
+    private void GameOver()
+    {
+        gameOverUI.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+
+    public void Restart()
+    {
+        gameOverUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsOver = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
 
     public void LoadMenu()

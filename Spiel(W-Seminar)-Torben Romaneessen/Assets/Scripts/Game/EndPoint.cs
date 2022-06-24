@@ -23,6 +23,7 @@ public class EndPoint : MonoBehaviour
         {
             LevelPassed();
             Debug.Log("You have completed this Level!");
+            Destroy(this.gameObject);
         }
     }
 }

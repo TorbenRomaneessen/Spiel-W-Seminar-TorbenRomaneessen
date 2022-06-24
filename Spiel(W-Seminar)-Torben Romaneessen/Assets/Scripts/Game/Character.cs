@@ -6,7 +6,8 @@ public class Character : MonoBehaviour
 {
     //////////CharacterCharacteristics//////////
     [SerializeField]
-    int currentHealthPlayer = 3;
+    public int currentHealthPlayer = 3;
+    public static bool playerDied;
     [SerializeField]
     private float speed = 10f;
     [SerializeField]
@@ -201,27 +202,17 @@ public class Character : MonoBehaviour
             character.transform.parent = collision.transform;
             isGrounded = true;
             canDash = true;
-            //if(Input.anyKeyDown && collision.gameObject.CompareTag("Platform"))
-            //{
-            //    animator.SetBool(runAnimation, true);
-            //    animator.SetBool(idleAnimation, true);
-            //}
-        }
-
-        else
-        {
-            character.transform.parent = null;
         }
     }
 
 
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Platform"))
-    //    {
-    //        character.transform.parent = null;
-    //    }
-    //}
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            character.transform.parent = null;
+        }
+    }
 
 
     void AnimateWalk()
@@ -341,23 +332,25 @@ public class Character : MonoBehaviour
 
         if (currentHealthPlayer <= 0)
         {
-            Respawn();
+            //Respawn();
+            playerDied = true;
         }
+
     }
 
 
-    private void Respawn()
-    {
-        Debug.Log("Character died!");
+    //private void Respawn()
+    //{
+    //    Debug.Log("Character died!");
 
-        //animator.SetBool("Dead", true);
+    //    //animator.SetBool("Dead", true);
 
-        this.transform.position = new Vector3(-35, 5, 0);
-        currentHealthPlayer = 3;
-        hearts[0].gameObject.SetActive(true);
-        hearts[1].gameObject.SetActive(true);
-        hearts[2].gameObject.SetActive(true);
-    }
+    //    this.transform.position = new Vector3(-35, 5, 0);
+    //    currentHealthPlayer = 3;
+    //    hearts[0].gameObject.SetActive(true);
+    //    hearts[1].gameObject.SetActive(true);
+    //    hearts[2].gameObject.SetActive(true);
+    //}
 
 
     private void Dash()

@@ -21,17 +21,17 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        levelsUnlocked = PlayerPrefs.GetInt("levelsUnlocked", 1);
+        //levelsUnlocked = PlayerPrefs.GetInt("levelsUnlocked", 1);
 
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].interactable = false;
-        }
+        //for (int i = 0; i < buttons.Length; i++)
+        //{
+        //    buttons[i].interactable = false;
+        //}
 
-        for (int i = 0; i < levelsUnlocked; i++)
-        {
-            buttons[i].interactable = true;
-        }
+        //for (int i = 0; i < levelsUnlocked; i++)
+        //{
+        //    buttons[i].interactable = true;
+        //}
     }
 
     

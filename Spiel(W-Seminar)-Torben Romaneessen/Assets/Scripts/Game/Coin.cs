@@ -15,10 +15,5 @@ public class Coin : MonoBehaviour
             //Destroy(collision.gameObject);
             Debug.Log("Coin!");
         }
-
-        //if (collision.gameObject.CompareTag("Character"))
-        //{
-        //    LevelManager.instance.LevelPassed();
-        //}
     }
 }
