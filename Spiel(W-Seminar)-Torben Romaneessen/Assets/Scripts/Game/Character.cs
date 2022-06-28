@@ -327,30 +327,17 @@ public class Character : MonoBehaviour
             Debug.Log("Player has been hit");
             counter = 0;
             transform.position = CheckPoint.ReachedPoint;
-            //transform.position = new Vector3(character.position.x -19, character.position.y + 7f, character.position.z);
         }
 
         if (currentHealthPlayer <= 0)
         {
-            //Respawn();
+            //animator.SetBool("Dead", true);
+            Debug.Log("Playerdied = true");
             playerDied = true;
+            currentHealthPlayer = 3;
         }
 
     }
-
-
-    //private void Respawn()
-    //{
-    //    Debug.Log("Character died!");
-
-    //    //animator.SetBool("Dead", true);
-
-    //    this.transform.position = new Vector3(-35, 5, 0);
-    //    currentHealthPlayer = 3;
-    //    hearts[0].gameObject.SetActive(true);
-    //    hearts[1].gameObject.SetActive(true);
-    //    hearts[2].gameObject.SetActive(true);
-    //}
 
 
     private void Dash()

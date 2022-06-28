@@ -12,10 +12,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject levelCompletedUI;
 
 
-
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && GameIsOver == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && GameIsOver == false)
         {
             if(GameIsPaused )
             {
@@ -28,14 +27,14 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if(Character.playerDied == true)
+        if (Character.playerDied == true)
         {
             GameOver();
             GameIsOver = true;
             Character.playerDied = false;
         }
 
-        if(EndPoint.LevelCompleted == true)
+        if (EndPoint.LevelCompleted == true)
         {
             LevelCompleted();
             EndPoint.LevelCompleted = false;
@@ -43,10 +42,9 @@ public class PauseMenu : MonoBehaviour
     }
 
 
-   public void Resume()
+    public void Resume()
    {
         pauseMenuUI.SetActive(false);
-        //gameOverUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
    }
@@ -83,6 +81,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        Debug.Log("Game has been restarted!");
         gameOverUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsOver = false;
