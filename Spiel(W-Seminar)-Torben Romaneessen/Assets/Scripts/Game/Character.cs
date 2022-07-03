@@ -334,6 +334,7 @@ public class Character : MonoBehaviour
             //animator.SetBool("Dead", true);
             Debug.Log("Playerdied = true");
             playerDied = true;
+            ScoreManager.instance2.ChangeDeathCounter();
             currentHealthPlayer = 3;
         }
 
