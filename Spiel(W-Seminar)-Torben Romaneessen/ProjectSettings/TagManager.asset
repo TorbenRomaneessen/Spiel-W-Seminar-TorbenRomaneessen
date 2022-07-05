@@ -56,6 +56,9 @@ TagManager:
   - name: Decoration 1
     uniqueID: 982456101
     locked: 0
+  - name: Old Guy
+    uniqueID: 567470079
+    locked: 0
   - name: Character
     uniqueID: 1220406661
     locked: 0
