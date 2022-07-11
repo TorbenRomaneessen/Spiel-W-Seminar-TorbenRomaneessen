@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Dialog : MonoBehaviour
 {
-    public TextMeshProUGUI textDisplay;
+    //public TextMeshProUGUI textDisplay;
+    public Text textDisplay;
     public string[] sentences;
     private int index;
     public float typingSpeed;

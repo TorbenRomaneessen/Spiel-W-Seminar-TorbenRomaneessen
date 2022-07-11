@@ -16,14 +16,20 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && GameIsOver == false)
         {
-            if(GameIsPaused )
+            if(GameIsPaused)
             {
                 Resume();
+                if(Dialog.instance.isTalking == true)
+                {
+                    Dialog.instance.DialogBox.SetActive(true);
+                }
             }
 
             else
             {
-                Pause();
+                Pause(); 
+                Dialog.instance.DialogBox.SetActive(false);
+                Dialog.instance.continueButton.SetActive(true);
             }
         }
 
@@ -47,7 +53,12 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-   }
+
+        if (Dialog.instance.isTalking == true)
+        {
+            Dialog.instance.DialogBox.SetActive(true);
+        }
+    }
 
 
    private void Pause()
