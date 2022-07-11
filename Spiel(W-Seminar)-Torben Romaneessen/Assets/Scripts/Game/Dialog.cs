@@ -9,13 +9,25 @@ public class Dialog : MonoBehaviour
     public string[] sentences;
     private int index;
     public float typingSpeed;
+    public bool isTalking = true;
 
+    public static Dialog instance;
     public GameObject continueButton;
     public GameObject DialogBox;
 
     private void Start()
     {
-        StartCoroutine(Type());
+        //if (OldGuy.instance.startDialog == true)
+        //{
+            StartCoroutine(Type());
+        //}
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+        isTalking = true;
     }
 
 
@@ -25,7 +37,13 @@ public class Dialog : MonoBehaviour
         {
             continueButton.SetActive(true);
         }
-        
+
+        if (index == sentences.Length - 1)
+        {
+            isTalking = false;
+            Dialog.instance.isTalking = false;
+        }
+
     }
 
 
@@ -38,6 +56,7 @@ public class Dialog : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
            
         }
+        continueButton.SetActive(true);
     }
 
 
@@ -48,7 +67,10 @@ public class Dialog : MonoBehaviour
         if(index == sentences.Length - 1)
         {
             DialogBox.SetActive(false);
-
+            isTalking = false;
+            OldGuy.instance.Barrier.SetActive(false);
+            Debug.Log("ISTALKING = FALSE");
+            Dialog.instance.isTalking = false;
         }
 
         if (index < sentences.Length - 1)
@@ -57,12 +79,14 @@ public class Dialog : MonoBehaviour
             index++;
             textDisplay.text = "";
             StartCoroutine(Type());
+            isTalking = true;
         }
 
         else
         {
             textDisplay.text = "";
             continueButton.SetActive(false);
+            isTalking = true;
         }
     }
 }

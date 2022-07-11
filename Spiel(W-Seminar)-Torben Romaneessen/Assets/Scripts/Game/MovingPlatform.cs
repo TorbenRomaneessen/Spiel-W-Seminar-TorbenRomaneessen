@@ -7,6 +7,7 @@ public class MovingPlatform : MonoBehaviour
     public Transform position1, position2, position3, position4;
     public float speed;
     public Transform startposition;
+    public bool reachedStartpoint = false;
 
     Vector3 nextposition;
 
@@ -20,26 +21,29 @@ public class MovingPlatform : MonoBehaviour
 
     private void Update()
     {
-        if(transform.position == position1.position)
+        if (Dialog.instance.isTalking == false)
         {
-            nextposition = position2.position;
+            if (transform.position == position1.position)
+            {
+                nextposition = position2.position;
+            }
         }
 
-        if(transform.position == position2.position)
-        {
-            nextposition = position3.position;
-        }
+            if (transform.position == position2.position)
+            {
+                nextposition = position3.position;
+            }
 
-        if (transform.position == position3.position)
-        {
-            nextposition = position4.position;
-        }
+            if (transform.position == position3.position)
+            {
+                nextposition = position4.position;
+            }
 
-        if (transform.position == position4.position)
-        {
-            nextposition = position1.position;
-        }
-
+            if (transform.position == position4.position)
+            {
+                nextposition = position1.position;
+            }
+ 
         transform.position = Vector3.MoveTowards(transform.position, nextposition, speed * Time.deltaTime);
     }
 
@@ -47,5 +51,7 @@ public class MovingPlatform : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(position1.position, position2.position);
+        Gizmos.DrawLine(position2.position, position3.position);
+        Gizmos.DrawLine(position3.position, position4.position);
     }
 }
