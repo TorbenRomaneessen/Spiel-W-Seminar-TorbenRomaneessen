@@ -300,7 +300,6 @@ public class Character : MonoBehaviour
     {
         if(currentHealthPlayer < 1)
         {
-            //Destroy(hearts[0].gameObject);
             hearts[0].gameObject.SetActive(false);
         }
 

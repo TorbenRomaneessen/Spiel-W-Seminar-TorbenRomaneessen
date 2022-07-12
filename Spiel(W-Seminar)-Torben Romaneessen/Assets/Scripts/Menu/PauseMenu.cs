@@ -7,9 +7,22 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public static bool GameIsOver = false;
+    public bool finishText;
     public GameObject pauseMenuUI;
     public GameObject gameOverUI;
     public GameObject levelCompletedUI;
+
+    public static PauseMenu instance;
+
+
+
+    private void Start()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
 
     void Update()
@@ -19,17 +32,17 @@ public class PauseMenu : MonoBehaviour
             if(GameIsPaused)
             {
                 Resume();
-                if(Dialog.instance.isTalking == true)
-                {
-                    Dialog.instance.DialogBox.SetActive(true);
-                }
+                finishText = true;
+
             }
 
             else
             {
-                Pause(); 
-                Dialog.instance.DialogBox.SetActive(false);
-                Dialog.instance.continueButton.SetActive(true);
+                    Pause();
+                    Dialog.instance.DialogBox.SetActive(false);
+                    Dialog.instance.continueButton.SetActive(false);
+                    
+
             }
         }
 
@@ -53,10 +66,12 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        finishText = true;
 
         if (Dialog.instance.isTalking == true)
         {
             Dialog.instance.DialogBox.SetActive(true);
+            Dialog.instance.continueButton.SetActive(true);
         }
     }
 

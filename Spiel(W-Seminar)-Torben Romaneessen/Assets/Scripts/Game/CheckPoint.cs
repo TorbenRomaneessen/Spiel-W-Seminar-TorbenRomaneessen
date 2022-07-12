@@ -15,9 +15,7 @@ public class CheckPoint : MonoBehaviour
             //if (this.transform.position.x > ReachedPoint.x)
             //{
                 ReachedPoint = this.transform.position;
-                Debug.Log("Working for real");
             //}
         }
-        Debug.Log(ReachedPoint);
     }
 }

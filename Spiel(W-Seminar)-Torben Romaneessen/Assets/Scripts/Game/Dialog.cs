@@ -19,10 +19,7 @@ public class Dialog : MonoBehaviour
 
     private void Start()
     {
-        //if (OldGuy.instance.startDialog == true)
-        //{
-            StartCoroutine(Type());
-        //}
+        StartCoroutine(Type());
 
         if (instance == null)
         {
@@ -40,12 +37,18 @@ public class Dialog : MonoBehaviour
             continueButton.SetActive(true);
         }
 
-        if (index == sentences.Length - 1)
+        if(PauseMenu.instance.finishText)
         {
-            isTalking = false;
-            Dialog.instance.isTalking = false;
+            textDisplay.text = sentences[index];
+            PauseMenu.instance.finishText = false;
         }
 
+        if (index == sentences.Length - 1 && textDisplay.text == sentences[index])
+        {
+            DialogBox.SetActive(false);
+            instance.isTalking = false;
+            OldGuy.instance.Barrier.SetActive(false);
+        }
     }
 
 
@@ -66,18 +69,8 @@ public class Dialog : MonoBehaviour
     {
         continueButton.SetActive(false);
 
-        if(index == sentences.Length - 1)
-        {
-            DialogBox.SetActive(false);
-            isTalking = false;
-            OldGuy.instance.Barrier.SetActive(false);
-            Debug.Log("ISTALKING = FALSE");
-            Dialog.instance.isTalking = false;
-        }
-
         if (index < sentences.Length - 1)
         {
-
             index++;
             textDisplay.text = "";
             StartCoroutine(Type());
@@ -88,7 +81,15 @@ public class Dialog : MonoBehaviour
         {
             textDisplay.text = "";
             continueButton.SetActive(false);
-            isTalking = true;
+            OldGuy.instance.Barrier.SetActive(false);
         }
+    }
+
+
+    public void CloseDialog()
+    {
+        DialogBox.SetActive(false);
+        OldGuy.instance.Barrier.SetActive(false);
+        instance.isTalking = false;
     }
 }

@@ -35,14 +35,12 @@ public class OldGuy : MonoBehaviour
         if(Dialog.instance.isTalking == false)
         {
             animator.SetBool("isTalking", true);
-            Barrier.SetActive(true);
             Debug.Log("Functining");
         }
 
         else
         {
             animator.SetBool("isTalking", false);
-            //Barrier.SetActive(false);
         }
     }
 
