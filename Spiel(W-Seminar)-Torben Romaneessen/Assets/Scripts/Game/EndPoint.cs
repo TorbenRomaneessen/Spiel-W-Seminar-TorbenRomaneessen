@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class EndPoint : MonoBehaviour
 {
     public static bool LevelCompleted;
+
+
+
     public void LevelPassed()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
@@ -30,3 +33,4 @@ public class EndPoint : MonoBehaviour
         }
     }
 }
+ 

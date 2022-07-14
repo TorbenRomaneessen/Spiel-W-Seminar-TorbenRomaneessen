@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - EndCoin
   - Platform
+  - EndFlag
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,20 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     public static Vector3 ReachedPoint;
-   
+    public GameObject Flag;
+    public Animator animator;
+    public static CheckPoint instance;
+
+
+
+    private void Start()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+    }
 
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -15,6 +28,8 @@ public class CheckPoint : MonoBehaviour
             //if (this.transform.position.x > ReachedPoint.x)
             //{
                 ReachedPoint = this.transform.position;
+                animator.SetTrigger("NewCheckPoint");
+                
             //}
         }
     }
