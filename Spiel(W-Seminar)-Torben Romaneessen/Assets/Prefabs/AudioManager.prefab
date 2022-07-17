@@ -44,9 +44,94 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
-    clip: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: Theme
+    clip: {fileID: 8300000, guid: acad5a4a68db999418fe435f8a7a7381, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: Walking
+    clip: {fileID: 8300000, guid: 68e6218371e2bdf4eb45c9de6031b083, type: 3}
     volume: 0
-    pitch: 0
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: Coin
+    clip: {fileID: 8300000, guid: 76ced74677bda8b4681bd67c3b11cd77, type: 3}
+    volume: 1
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: Dash
+    clip: {fileID: 8300000, guid: 0b351bb89e9b5d34f913505f6dd3c0d5, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: AttackSound2
+    clip: {fileID: 8300000, guid: 903775fae713651468d9ae6f2a7cdff6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: AttackSound1
+    clip: {fileID: 8300000, guid: b8312fc5b2dfd0241affddd34d380340, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: TakeDamageSound
+    clip: {fileID: 8300000, guid: 8420c42f35858d74fb5ee0ec08a500e4, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: StartGameSound
+    clip: {fileID: 8300000, guid: 94c30b57d7b6d074f8c8c9891da255ab, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: LevelCompletedSound
+    clip: {fileID: 8300000, guid: b085a684a9587b446830be8fa7be6ee5, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: DyingSound
+    clip: {fileID: 8300000, guid: 499ad33820c2754429e6e4492fc7cbbe, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: DialogSound
+    clip: {fileID: 8300000, guid: e233c1c439a6c35488e4462ef011e706, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: CloseTabSound
+    clip: {fileID: 8300000, guid: f586a849d248f554ca76c93db067a1fd, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - group: {fileID: 24300002, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+    name: ClickSound
+    clip: {fileID: 8300000, guid: 86a5e66b7c761414d8d330d78ff84820, type: 3}
+    volume: 0.5
+    pitch: 1
     loop: 0
     source: {fileID: 0}

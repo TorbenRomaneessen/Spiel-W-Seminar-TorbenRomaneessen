@@ -54,6 +54,7 @@ public class Dialog : MonoBehaviour
 
     IEnumerator Type()
     {
+        //FindObjectOfType<AudioManager>().Play("DialogSound");
         DialogBox.SetActive(true);
         foreach (char letter in sentences[index].ToCharArray())
         {
@@ -67,6 +68,7 @@ public class Dialog : MonoBehaviour
 
     public void NextSentence()
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         continueButton.SetActive(false);
 
         if (index < sentences.Length - 1)
@@ -88,6 +90,7 @@ public class Dialog : MonoBehaviour
 
     public void CloseDialog()
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         DialogBox.SetActive(false);
         OldGuy.instance.Barrier.SetActive(false);
         instance.isTalking = false;

@@ -64,6 +64,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
    {
         pauseMenuUI.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         Time.timeScale = 1f;
         GameIsPaused = false;
         finishText = true;
@@ -79,6 +80,7 @@ public class PauseMenu : MonoBehaviour
    private void Pause()
    {
         pauseMenuUI.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         Time.timeScale = 0f;
         GameIsPaused = true;
    }
@@ -86,6 +88,7 @@ public class PauseMenu : MonoBehaviour
 
     private void GameOver()
     {
+        FindObjectOfType<AudioManager>().Play("DyingSound");
         gameOverUI.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -93,6 +96,7 @@ public class PauseMenu : MonoBehaviour
 
     private void LevelCompleted()
     {
+        FindObjectOfType<AudioManager>().Play("LevelCompletedSound");
         levelCompletedUI.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -100,6 +104,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1f;
     }
@@ -107,6 +112,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         Debug.Log("Game has been restarted!");
         gameOverUI.SetActive(false);
         Time.timeScale = 1f;
@@ -117,6 +123,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
@@ -124,6 +131,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         Debug.Log("Quitting game...");
         Application.Quit();
     }

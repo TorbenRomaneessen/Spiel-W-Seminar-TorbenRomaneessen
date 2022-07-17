@@ -320,9 +320,9 @@ public class Character : MonoBehaviour
     {
         if ((CollisionWithThorns == true || CollisionWithEnemy == true) && counter >= 1)
         {
+            FindObjectOfType<AudioManager>().Play("TakeDamageSound");
             animator.SetTrigger(takeDamageAnimation);
             currentHealthPlayer -= 1;
-            //canDash = true;
 
             Debug.Log("Player has been hit");
             counter = 0;

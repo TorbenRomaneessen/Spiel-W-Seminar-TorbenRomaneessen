@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5125798900029535899}
   - component: {fileID: 9049376969714160456}
   - component: {fileID: 5938242960749423034}
+  - component: {fileID: 1094980754}
+  - component: {fileID: 704635092299104347}
   m_Layer: 0
   m_Name: 'Flag '
   m_TagString: Untagged
@@ -70,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1909600577
-  m_SortingLayer: 9
-  m_SortingOrder: 0
+  m_SortingLayerID: 982456101
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1805158079502305607, guid: 1753271434c39064597b5b7897370116, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,3 +105,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1094980754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196252439789935361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a81ec1889246fd54fb6e9a312a3686ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5938242960749423034}
+  Flag: {fileID: 1196252439789935361}
+--- !u!61 &704635092299104347
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196252439789935361}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.0308778}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.41, y: 0.57}
+    newSize: {x: 0.41, y: 0.57}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.41, y: 2.4073677}
+  m_EdgeRadius: 0

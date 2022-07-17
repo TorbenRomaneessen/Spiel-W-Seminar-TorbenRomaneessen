@@ -57,23 +57,27 @@ public class OptionsMenu : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        FindObjectOfType<AudioManager>().Play("ClickSound");
     }
 
 
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);//original ("volume, volume)Mathf.Log10(volume * 20)
+        FindObjectOfType<AudioManager>().Play("ClickSound");
     }
 
 
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+        FindObjectOfType<AudioManager>().Play("ClickSound");
     }
 
 
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+        FindObjectOfType<AudioManager>().Play("ClickSound");
     }
 }

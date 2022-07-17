@@ -28,7 +28,6 @@ public class CheckPoint : MonoBehaviour
             //if (this.transform.position.x > ReachedPoint.x)
             //{
                 ReachedPoint = this.transform.position;
-                animator.SetTrigger("NewCheckPoint");
                 
             //}
         }

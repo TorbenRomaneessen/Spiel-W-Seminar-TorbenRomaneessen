@@ -14,6 +14,7 @@ public class EndFlag : MonoBehaviour
         if (col.gameObject.CompareTag("Character"))
         {
             animator.SetTrigger("LevelCompleted");
+
         }
     }
 }

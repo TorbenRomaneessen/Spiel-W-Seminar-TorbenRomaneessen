@@ -39,18 +39,21 @@ public class LevelManager : MonoBehaviour
     
     public void LoadLevel(int levelIndex)
     {
+        FindObjectOfType<AudioManager>().Play("StartGameSound");
         SceneManager.LoadScene(levelIndex);
     }
 
 
     public void LoadNextPage()
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         levelPage1.SetActive(false);
         levelPage2.SetActive(true);
     }
 
     public void LoadPreviousPage()
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         levelPage1.SetActive(true);
         levelPage2.SetActive(false);
     }
