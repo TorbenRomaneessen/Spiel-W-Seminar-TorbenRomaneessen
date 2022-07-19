@@ -288,7 +288,7 @@ public class Character : MonoBehaviour
     {
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetButtonDown("Fire1"))
             {
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
