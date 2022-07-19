@@ -56,10 +56,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -98,6 +100,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -412,9 +415,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_2: -6209386602803012191
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_6: -1360241919854548495
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_7: -414994640655695004
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_10: 2045404436333789749
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_11: -3097710104999402536
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_5: 5168520437246310526
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_9: -4272512620024239096
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_0: 1746226322951276482
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_1: 9109420300429692997
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_3: 4237773701229234064
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_4: -3131696445525781921
+      SeekPng.com_knight-armor-png_3751215 (1)-Recovered1_8: 8887205087944107446
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

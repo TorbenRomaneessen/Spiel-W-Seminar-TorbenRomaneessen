@@ -101,10 +101,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -143,6 +145,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -772,9 +775,36 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Decoration_14: -6474815905490174710
+      Decoration_21: -545380113026382421
+      Decoration_8: -389087280608379294
+      Decoration_2: 566846315969825457
+      Decoration_15: 2051757784263316258
+      Decoration_11: -7926080337853386996
+      Decoration_26: -7001666877434044512
+      Decoration_25: 7081662665494935325
+      Decoration_6: 3754962894339544984
+      Decoration_12: -5957907480768474131
+      Decoration_13: -8952722625416497748
+      Decoration_22: 7686115043111144839
+      Decoration_24: 1356666032084300529
+      Decoration_4: -9150735976156324452
+      Decoration_3: -983121831306131238
+      Decoration_19: 429415279605046377
+      Decoration_20: 5575579087702807243
+      Decoration_10: 4030208814000181183
+      Decoration_0: -368401321789775361
+      Decoration_1: -4206819594563279181
+      Decoration_9: 8002333480267911400
+      Decoration_5: -1050146069433883852
+      Decoration_17: 2558546051751004457
+      Decoration_16: 8538422899418973946
+      Decoration_18: -1454307687701597747
+      Decoration_23: 4695875553099044208
+      Decoration_7: 3872367889646283263
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

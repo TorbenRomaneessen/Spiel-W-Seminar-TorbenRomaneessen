@@ -110,10 +110,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -152,6 +154,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -844,9 +847,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Ground 3_21: -3197831733461470967
+      Ground 3_8: 3540769505789280761
+      Ground 3_14: -8124418653971868493
+      Ground 3_22: 1629323038737545867
+      Ground 3_20: -6941090904552085192
+      Ground 3_6: 906351898543944809
+      Ground 3_26: 7331859063816499934
+      Ground 3_18: -114309635803242985
+      Ground 3_3: -845894354489624071
+      Ground 3_4: -8098004570707950381
+      Ground 3_16: 7901897862564676977
+      Ground 3_7: 1764993175759202863
+      Ground 3_9: 2088514998247290132
+      Ground 3_15: -7883172968247983555
+      Ground 3_10: 324764253537585268
+      Ground 3_12: 1674810368651665700
+      Ground 3_11: -5653599932350574024
+      Ground 3_2: 7292824545723419402
+      Ground 3_0: 923822758063113563
+      Ground 3_29: 2864861495396056858
+      Ground 3_1: 914194857119389410
+      Ground 3_25: 2050209632398274221
+      Ground 3_5: 5850864032334437162
+      Ground 3_24: 8559960103179462208
+      Ground 3_27: -7007884864337952711
+      Ground 3_17: 325604131867212735
+      Ground 3_19: -2182050049216783427
+      Ground 3_13: 8300229195470838763
+      Ground 3_23: -1373320217602028330
+      Ground 3_28: -3079766514597924669
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

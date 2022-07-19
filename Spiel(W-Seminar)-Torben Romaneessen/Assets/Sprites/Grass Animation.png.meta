@@ -50,10 +50,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -92,6 +94,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -364,9 +367,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Grass Animation_1: -6267531393455324887
+      Grass Animation_3: -657669463779065640
+      Grass Animation_5: -386669821063254272
+      Grass Animation_4: 4607652200992961714
+      Grass Animation_2: -5619581709737553805
+      Grass Animation_8: 7376191244593174353
+      Grass Animation_9: 1265300170385025515
+      Grass Animation_6: 4728795242643669021
+      Grass Animation_7: 6144912721811592355
+      Grass Animation_0: 3371915131088149445
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

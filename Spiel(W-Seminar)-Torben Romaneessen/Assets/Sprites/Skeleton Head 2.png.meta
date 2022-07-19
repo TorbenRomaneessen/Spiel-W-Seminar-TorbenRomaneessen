@@ -53,10 +53,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -95,6 +97,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -388,9 +391,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Skeleton Head 2_4: 4263815880056611033
+      Skeleton Head 2_0: 1542969787937565933
+      Skeleton Head 2_6: 8013223014756122468
+      Skeleton Head 2_7: -8027802917370555101
+      Skeleton Head 2_1: 6042113216664727111
+      Skeleton Head 2_3: 4686339926195583350
+      Skeleton Head 2_9: 3948412691236796698
+      Skeleton Head 2_10: -771471429570296932
+      Skeleton Head 2_5: 2325599292882990424
+      Skeleton Head 2_2: 1059893384696687848
+      Skeleton Head 2_8: 270764843823160978
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
