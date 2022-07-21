@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PauseMenu : MonoBehaviour
 
     public static PauseMenu instance;
 
+    public EventSystem EventSystem;
+    public GameObject ResumeButton;
 
 
     private void Start()
@@ -22,6 +25,8 @@ public class PauseMenu : MonoBehaviour
         {
             instance = this;
         }
+
+        EventSystem = EventSystem.current;
     }
 
 
@@ -83,6 +88,8 @@ public class PauseMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("ClickSound");
         Time.timeScale = 0f;
         GameIsPaused = true;
+        EventSystem.SetSelectedGameObject(ResumeButton);
+
    }
 
 
