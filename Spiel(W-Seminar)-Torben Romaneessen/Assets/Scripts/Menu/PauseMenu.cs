@@ -17,7 +17,8 @@ public class PauseMenu : MonoBehaviour
 
     public EventSystem EventSystem;
     public GameObject ResumeButton;
-
+    public GameObject RestartButton;
+    public GameObject NextLevelButton;
 
     private void Start()
     {
@@ -97,6 +98,7 @@ public class PauseMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("DyingSound");
         gameOverUI.SetActive(true);
+        EventSystem.SetSelectedGameObject(RestartButton);
         Time.timeScale = 0f;
     }
 
@@ -105,6 +107,7 @@ public class PauseMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("LevelCompletedSound");
         levelCompletedUI.SetActive(true);
+        EventSystem.SetSelectedGameObject(NextLevelButton);
         Time.timeScale = 0f;
     }
 

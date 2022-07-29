@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1349.3334
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Console
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -120,16 +120,16 @@ MonoBehaviour:
     y: 769.3333
     width: 1956
     height: 530.00006
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 14}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 14}
   - {fileID: 19}
   - {fileID: 12}
   - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 3
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -482,22 +482,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Game
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Game
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\GitHub\Spiel-W-Seminar-TorbenRomaneessen\Spiel(W-Seminar)-Torben
     Romaneessen
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 32650000
-    m_LastClickedID: 25906
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 34650000
+    m_LastClickedID: 25908
     m_ExpandedIDs: 0000000096640000986400009a6400009c6400009e640000a0640000a2640000a4640000a664000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -551,8 +551,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 20070000
+    m_LastClickedInstanceID: 1824
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000d88300006283000066830000
     m_RenameOverlay:
@@ -654,9 +654,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 20070000
       m_LastClickedID: 0
-      m_ExpandedIDs: fad8feff40d9feff48dbfeffc4dbfeff52ddfeff80dffeffc6e0feffd2e0feff00e1feffbee7feff04e8fefff0e9feff6ceafefffaebfeff28eefeff6eeffeff7aeffeffa8effeff3cf5feff82f5feff8af7feff06f8feff94f9feffc2fbfeff08fdfeff14fdfeff42fdfeff560effff9c0effff8810ffff0411ffff9212ffffc014ffff0616ffff1216ffff4016ffff541fffff9a1fffff8621ffff0222ffff9023ffffbe25ffff0427ffff1027ffff3e27ffffa62dffff102fffffe230ffff1251ffff5851ffff6053ffffdc53ffff6a55ffff9857ffffde58ffffea58ffff1859ffff1ca8ffffa0acffffe6acffffd2aeffff4eafffffdcb0ffff0ab3ffff50b4ffff5cb4ffff8ab4ffff28bfffff02c7ffff48c7ffff34c9ffffb0c9ffff3ecbffff6ccdffffb2ceffffbeceffffecceffffeed3ffff34d4ffff3cd6ffffb8d6ffff46d8ffff74daffffbadbffffc6dbfffff4dbffffe2dfffffa6e0ffffc2e2ffff12e4ffff64e4ffff08e6ffff7ef5fffff0f6ffff24fbffff5e6200007862000076a3000090a30000ccb00000eab000003cb30000dcb30000f6b3000040b500005eb50000ceb600006eb7000088b70000d2b80000f0b8000028b900002e830100d24c0200a61d0300e41e0300181f0300f2210300f623030094290300b02b03008c33030042340300c233060018350600323806003e4b060060700600c0700600da700600c87506000a7606002a7e06003c83060092e7070016fd0700ea51090092610b006e8b0c00
+      m_ExpandedIDs: 5aecffff0ef0ffff12f3ffff24fbffff5e62000030280100028f010096940100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -971,9 +971,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1239.8562, y: 1421.5355, z: -26.42793}
+    m_Target: {x: 1617.3632, y: 1378.1887, z: -14.678438}
     speed: 2
-    m_Value: {x: 1239.8562, y: 1421.5355, z: -26.42793}
+    m_Value: {x: 1617.3632, y: 1378.1887, z: -14.678438}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1023,9 +1023,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2646.3088
+    m_Target: 1471.3575
     speed: 2
-    m_Value: 2646.3088
+    m_Value: 1471.3575
   m_Ortho:
     m_Target: 1
     speed: 2
