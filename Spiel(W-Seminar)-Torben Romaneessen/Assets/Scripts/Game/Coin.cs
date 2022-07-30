@@ -5,6 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public int coinValue = 1;
+    public GameObject coin;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,6 +14,7 @@ public class Coin : MonoBehaviour
             ScoreManager.instance2.ChangeScore(coinValue);
             FindObjectOfType<AudioManager>().Play("Coin");
             //Destroy(collision.gameObject);
+            Destroy(coin);
             Debug.Log("Coin!");
         }
     }

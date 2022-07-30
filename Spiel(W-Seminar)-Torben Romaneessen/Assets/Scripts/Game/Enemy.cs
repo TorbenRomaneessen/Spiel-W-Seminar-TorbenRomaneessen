@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
 
     //////////EnemyProperties//////////
     public Transform enemy;
+    public GameObject turtle;
     private SpriteRenderer spriteRendererEnemy;
     public Animator animator;
   
@@ -38,7 +39,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
+        //this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
         currenthealthenemy -= damage;
         animator.SetTrigger("Hurt");
 
@@ -55,6 +56,7 @@ public class Enemy : MonoBehaviour
 
         animator.SetBool("Dead", true);
 
+        //Destroy(turtle);
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
     }
