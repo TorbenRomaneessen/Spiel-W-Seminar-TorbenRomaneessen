@@ -13,9 +13,11 @@ public class Dialog : MonoBehaviour
     public float typingSpeed;
     public bool isTalking = true;
 
+
     public static Dialog instance;
     public GameObject continueButton;
     public GameObject DialogBox;
+
 
     private void Start()
     {
@@ -27,6 +29,7 @@ public class Dialog : MonoBehaviour
         }
 
         isTalking = true;
+
     }
 
 

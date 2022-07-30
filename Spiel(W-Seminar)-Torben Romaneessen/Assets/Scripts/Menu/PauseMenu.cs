@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour
         }
 
         EventSystem = EventSystem.current;
+
     }
 
 
