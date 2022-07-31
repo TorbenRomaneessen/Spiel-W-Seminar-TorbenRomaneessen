@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     //////////EnemyCharacteristics//////////
-    public int maxhealthenemy = 5;
+    public int maxhealthenemy = 3;
     private int currenthealthenemy;
     private float timepassed = 0;
 

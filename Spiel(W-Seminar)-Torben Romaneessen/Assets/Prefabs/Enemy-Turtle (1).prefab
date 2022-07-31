@@ -38,7 +38,7 @@ Transform:
   - {fileID: 1323250423412950411}
   - {fileID: 1032992363675354901}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &647694026292169772
 Animator:
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0e7eeb46a756e45a2e9577b8c6b3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealthenemy: 100
+  maxhealthenemy: 3
   enemy: {fileID: 3668565314740825897}
   turtle: {fileID: 140084656911070145}
   animator: {fileID: 0}

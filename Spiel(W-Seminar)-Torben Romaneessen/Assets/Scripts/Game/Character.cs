@@ -7,63 +7,59 @@ public class Character : MonoBehaviour
     //////////CharacterCharacteristics//////////
     [SerializeField]
     private int _currentHealthCharacter = 3;
-    private const float _speed = 6f;
-    private const float _jumpForce = 8f;
+    private const float Speed = 6f;
+    private const float JumpForce = 8f;
 
-    private const float _attackrange = 1.1f;
-    private const int _attackDamage = 1;
-    private const float _attackRate = 2f;
+    private const float AttackRange = 1.1f;
+    private const int AttackDamage = 1;
+    private const float AttackRate = 2f;
     private float _nextAttackTime = 0f;
 
     private float _invincibleTimer;
 
     private float _dashTimer = 0f;
-    private const float _dashRate = 2f;
-    private const float _dashingVelocity = 20f;
-    private const float _dashingTime = 0.1f;
-    private Vector2 dashingDirection;
+    private const float DashRate = 2f;
+    private const float DashingVelocity = 20f;
+    private const float DashingTime = 0.1f;
+    private Vector2 _dashingDirection;
+
 
     [SerializeField]
     private GameObject[] hearts;
     public static bool PlayerDied;
 
 
-
-    public static Character instance;
-
-
-    //////////CharacterProperties//////////
-    public Transform character;
+    private Transform _transform;
+    private Rigidbody2D _rigidBody2D;
+    private Animator _animator;
     [SerializeField]
-    private Rigidbody2D rigidBody2D;
+    private Transform _attackPoint;
     [SerializeField]
-    private Animator animator;
-    public Transform attackPoint;
-    public LayerMask enemyLayers;
-    private TrailRenderer trailRenderer;
-    public ParticleSystem dashTrail;
-    public ParticleSystem dust;
+    private LayerMask _enemyLayers;
+    [SerializeField]
+
+    private ParticleSystem _dashTrail;
+    [SerializeField]
+    private ParticleSystem _dust;
 
 
 
-    private float movementX;
+    private float _movementX;
 
     //////////Boolean//////////
-    private bool CollisionWithThorns;
-    private bool CollisionWithEnemy;
-    private bool isGrounded = false;
-    public bool isFlipped = false;
-    private bool isDashing;
-    private bool canDash;
+    private bool _collisionWithThorns;
+    private bool _collisionWithEnemy;
+    private bool _isGrounded = false;
+    private bool _isDashing;
+    private bool _canDash;
     public bool levelPassed;
 
   
     public void Awake()
     {
-        rigidBody2D = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        character = GetComponent<Transform>();
-        trailRenderer = GetComponent<TrailRenderer>();
+        _rigidBody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _transform = GetComponent<Transform>();
     }
 
 
@@ -84,33 +80,33 @@ public class Character : MonoBehaviour
 
     void CharacterRun()
     {
-        movementX = Input.GetAxisRaw("Horizontal");
-        transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * _speed;
+        _movementX = Input.GetAxisRaw("Horizontal");
+        transform.position += new Vector3(_movementX, 0f, 0f) * Time.deltaTime * Speed;
     }
 
 
     void PlayerJump()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && _isGrounded)
         {
-            animator.SetTrigger("TakeOf");
-            isGrounded = false;
-            rigidBody2D.AddForce(new Vector2(0f, _jumpForce), ForceMode2D.Impulse);
+            _animator.SetTrigger("TakeOf");
+            _isGrounded = false;
+            _rigidBody2D.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
         }
 
-        if (Input.GetButtonUp("Jump") && rigidBody2D.velocity.y > 0)
+        if (Input.GetButtonUp("Jump") && _rigidBody2D.velocity.y > 0)
         {
-            rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x,0);
+            _rigidBody2D.velocity = new Vector2(_rigidBody2D.velocity.x,0);
         }
 
-        if (isGrounded == true)
+        if (_isGrounded == true)
         {
-            animator.SetBool("Jump", false);
+            _animator.SetBool("Jump", false);
         }
 
         else
         {
-            animator.SetBool("Jump", true);
+            _animator.SetBool("Jump", true);
         }
     }
 
@@ -120,24 +116,24 @@ public class Character : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
-            canDash = true;
+            _isGrounded = true;
+            _canDash = true;
         }
 
         else
         {
-            isGrounded = false;
+            _isGrounded = false;
         }
 
         if (collision.gameObject.CompareTag("Thorns"))
         {
-            CollisionWithThorns = true;
+            _collisionWithThorns = true;
             Debug.Log("Player has been hit");
         }
 
         else
         {
-            CollisionWithThorns = false;
+            _collisionWithThorns = false;
         }
 
         if(collision.gameObject.CompareTag("Coin"))
@@ -147,19 +143,19 @@ public class Character : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            CollisionWithEnemy = true;
+            _collisionWithEnemy = true;
         }
 
         else
         {
-            CollisionWithEnemy = false;
+            _collisionWithEnemy = false;
         }
 
         if(collision.gameObject.CompareTag("Platform"))
         {
-            character.transform.parent = collision.transform;
-            isGrounded = true;
-            canDash = true;
+            _transform.parent = collision.transform;
+            _isGrounded = true;
+            _canDash = true;
         }
     }
 
@@ -168,33 +164,33 @@ public class Character : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
-            character.transform.parent = null;
+            _transform.parent = null;
         }
     }
 
 
     void AnimateWalk()
     {
-        if (movementX > 0 && isGrounded)
+        if (_movementX > 0 && _isGrounded)
         {
-            animator.SetBool("Run", true);
-            animator.SetBool("Jump", false);
-            animator.SetBool("Idle", false);
+            _animator.SetBool("Run", true);
+            _animator.SetBool("Jump", false);
+            _animator.SetBool("Idle", false);
             CreateDust();
         }
 
-        if (movementX == 0 && isGrounded)
+        if (_movementX == 0 && _isGrounded)
         {
-            animator.SetBool("Idle", true);
-            animator.SetBool("Jump", false);
-            animator.SetBool("Run", false);
+            _animator.SetBool("Idle", true);
+            _animator.SetBool("Jump", false);
+            _animator.SetBool("Run", false);
         }
 
-        if (movementX < 0 && isGrounded)
+        if (_movementX < 0 && _isGrounded)
         {
-            animator.SetBool("Run", true);
-            animator.SetBool("Jump", false);
-            animator.SetBool("Idle", false);
+            _animator.SetBool("Run", true);
+            _animator.SetBool("Jump", false);
+            _animator.SetBool("Idle", false);
             CreateDust();
         }
     }
@@ -202,15 +198,13 @@ public class Character : MonoBehaviour
 
     private void FlipCharacter()
     {
-        if (movementX < 0)
+        if (_movementX < 0)
         {
-            //CreateDust();
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
-        else if (movementX > 0)
+        else if (_movementX > 0)
         {
-            //CreateDust();
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
@@ -220,14 +214,14 @@ public class Character : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            animator.SetTrigger("Attack");
+            _animator.SetTrigger("Attack");
             FindObjectOfType<AudioManager>().Play("AttackSound (1)");
             FindObjectOfType<AudioManager>().Play("AttackSound (2)");
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, _attackrange, enemyLayers);
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(_attackPoint.position, AttackRange, _enemyLayers);
 
             foreach (Collider2D enemy in hitEnemies)
             {
-                enemy.GetComponent<Enemy>().TakeDamage(_attackDamage);
+                enemy.GetComponent<Enemy>().TakeDamage(AttackDamage);
             }
         }
     }
@@ -235,9 +229,9 @@ public class Character : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
+        if (_attackPoint == null)
             return;
-        Gizmos.DrawWireSphere(attackPoint.position, _attackrange);
+        Gizmos.DrawWireSphere(_attackPoint.position, AttackRange);
     }
 
 
@@ -248,7 +242,7 @@ public class Character : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 Attack();
-                _nextAttackTime = Time.time + 1f / _attackRate;
+                _nextAttackTime = Time.time + 1f / AttackRate;
             }
         }
     }
@@ -275,10 +269,10 @@ public class Character : MonoBehaviour
 
     public void DamageingObjects()
     {
-        if ((CollisionWithThorns == true || CollisionWithEnemy == true) && _invincibleTimer >= 1)
+        if ((_collisionWithThorns == true || _collisionWithEnemy == true) && _invincibleTimer >= 1)
         {
             FindObjectOfType<AudioManager>().Play("TakeDamageSound");
-            animator.SetTrigger("TakeDamage");
+            _animator.SetTrigger("TakeDamage");
             _currentHealthCharacter -= 1;
 
             Debug.Log("Player has been hit");
@@ -288,7 +282,6 @@ public class Character : MonoBehaviour
 
         if (_currentHealthCharacter <= 0)
         {
-            //animator.SetBool("Dead", true);
             Debug.Log("Playerdied = true");
             PlayerDied = true;
             ScoreManager.instance2.ChangeDeathCounter();
@@ -300,28 +293,27 @@ public class Character : MonoBehaviour
 
     private void Dash()
     {
-        if(Input.GetButtonDown("Dash") && canDash && Time.time >= _dashTimer)
+        if(Input.GetButtonDown("Dash") && _canDash && Time.time >= _dashTimer)
         {
-            animator.SetTrigger("Dash");
+            _animator.SetTrigger("Dash");
             FindObjectOfType<AudioManager>().Play("DashSound");
             CreateDashTrail();
-            isDashing = true;
-            canDash = false;
-            trailRenderer.emitting = true;
-            dashingDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            _isDashing = true;
+            _canDash = false;
+            _dashingDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-            if (dashingDirection == Vector2.zero)
+            if (_dashingDirection == Vector2.zero)
             {
-                dashingDirection = new Vector2(transform.localScale.x, 0);
+                _dashingDirection = new Vector2(transform.localScale.x, 0);
             }
 
             StartCoroutine(nameof(StopDashing));
-            _dashTimer = Time.time + 1f / _dashRate;
+            _dashTimer = Time.time + 1f / DashRate;
         }
 
-        if (isDashing)
+        if (_isDashing)
         {
-            rigidBody2D.velocity = dashingDirection.normalized * _dashingVelocity;
+            _rigidBody2D.velocity = _dashingDirection.normalized * DashingVelocity;
             return;
         }
     }
@@ -329,19 +321,18 @@ public class Character : MonoBehaviour
 
     private IEnumerator StopDashing()
     {
-        yield return new WaitForSeconds(_dashingTime);
-        trailRenderer.emitting  = false;
-        isDashing = false;
-        rigidBody2D.velocity = dashingDirection.normalized * 0;
+        yield return new WaitForSeconds(DashingTime);
+        _isDashing = false;
+        _rigidBody2D.velocity = _dashingDirection.normalized * 0;
     }
 
     private void CreateDashTrail()
     {
-        dashTrail.Play();
+        _dashTrail.Play();
     }
 
     private void CreateDust()
     {
-        dust.Play();
+        _dust.Play();
     }
 }
