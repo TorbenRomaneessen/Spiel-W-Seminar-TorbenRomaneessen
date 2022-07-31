@@ -33020,12 +33020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317e0172acc43874dafe105f68a6df39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealthPlayer: 3
-  speed: 5
-  jumpForce: 7
-  attackrange: 1.1
-  attackDamage: 40
-  attackRate: 2
+  _currentHealthCharacter: 3
   hearts:
   - {fileID: 625715987}
   - {fileID: 801136135}
