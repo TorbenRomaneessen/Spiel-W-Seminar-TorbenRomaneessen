@@ -23,6 +23,8 @@ public class Character : MonoBehaviour
     private float dashingTime = 0.1f;
     private Vector2 dashingDir;
     public GameObject[] hearts;
+    
+
 
     public static Character instance;
     //public GameObject characters;
@@ -141,7 +143,7 @@ public class Character : MonoBehaviour
             rigidBody2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
 
-        if(Input.GetButtonUp("Jump") && rigidBody2D.velocity.y > 0)
+        if (Input.GetButtonUp("Jump") && rigidBody2D.velocity.y > 0)
         {
             rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x,0);
         }
