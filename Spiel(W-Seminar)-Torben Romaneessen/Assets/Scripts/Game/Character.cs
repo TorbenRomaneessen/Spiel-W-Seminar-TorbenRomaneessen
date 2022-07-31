@@ -6,12 +6,14 @@ public class Character : MonoBehaviour
 {
     //////////CharacterCharacteristics//////////
     [SerializeField]
-    public int currentHealthPlayer = 3;
-    public static bool playerDied;
+    public int _currentHealthCharacter = 3;
     [SerializeField]
     private float speed = 10f;
     [SerializeField]
     private float jumpForce = 10f;
+
+    
+
     public float attackrange = 0.5f;
     public int attackDamage = 1;
     public float attackRate = 2f;
@@ -23,7 +25,8 @@ public class Character : MonoBehaviour
     private float dashingTime = 0.1f;
     private Vector2 dashingDir;
     public GameObject[] hearts;
-    
+    public static bool playerDied;
+
 
 
     public static Character instance;
@@ -42,19 +45,6 @@ public class Character : MonoBehaviour
     public ParticleSystem dashTrail;
     public ParticleSystem dust;
 
-    //////////Animations//////////
-    private string runAnimation = "Run";
-    private string jumpAnimation = "Jump";
-    private string idleAnimation = "Idle";
-    private string attackAnimation = "Attack";
-    private string takeDamageAnimation = "TakeDamage";
-    private string dashAnimation = "Dash";
-
-    //////////Tags//////////
-    private string ThornsTag = "Thorns";
-    private string groundTag = "Ground";
-    private string coinTag = "Coin";
-    private string enemyTag = "Enemy";
 
 
     private float movementX;
@@ -70,7 +60,6 @@ public class Character : MonoBehaviour
     public bool levelPassed;
 
   
-
     public void Awake()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
@@ -80,19 +69,12 @@ public class Character : MonoBehaviour
     }
 
 
-    void Start()
-    {
-
-    }
-
-
     void Update()
     {
         counter += Time.deltaTime;
 
         CharacterRun();
         AnimateWalk();
-        //DoubleJump();
         PlayerJump();
         FlipCharacter();
         AttackCooldown();
@@ -102,36 +84,11 @@ public class Character : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
-    {
-
-    }
-
-
     void CharacterRun()
     {
         movementX = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * speed;
     }
-
-
-    //private void DoubleJump()
-    //{
-    //    if (Input.GetButtonDown("Jump"))
-    //    {
-    //        if (isGrounded)
-    //        {
-    //            PlayerJump();
-    //            canDoubleJump = true;
-    //        }
-
-    //        else if (canDoubleJump)
-    //        {
-    //            PlayerJump();
-    //            canDoubleJump = false;
-    //        }
-    //    }
-    //}
 
 
     void PlayerJump()
@@ -163,7 +120,7 @@ public class Character : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(groundTag))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
             canDash = true;
@@ -174,7 +131,7 @@ public class Character : MonoBehaviour
             isGrounded = false;
         }
 
-        if (collision.gameObject.CompareTag(ThornsTag))
+        if (collision.gameObject.CompareTag("Thorns"))
         {
             CollisionWithThorns = true;
             Debug.Log("Player has been hit");
@@ -185,12 +142,12 @@ public class Character : MonoBehaviour
             CollisionWithThorns = false;
         }
 
-        if(collision.gameObject.CompareTag(coinTag))
+        if(collision.gameObject.CompareTag("Coin"))
         {
             Destroy(collision.gameObject);
         }
 
-        if(collision.gameObject.CompareTag(enemyTag))
+        if(collision.gameObject.CompareTag("Enemy"))
         {
             CollisionWithEnemy = true;
         }
@@ -222,24 +179,24 @@ public class Character : MonoBehaviour
     {
         if (movementX > 0 && isGrounded)
         {
-            animator.SetBool(runAnimation, true);
-            animator.SetBool(jumpAnimation, false);
-            animator.SetBool(idleAnimation, false);
+            animator.SetBool("Run", true);
+            animator.SetBool("Jump", false);
+            animator.SetBool("Idle", false);
             CreateDust();
         }
 
         if (movementX == 0 && isGrounded)
         {
-            animator.SetBool(idleAnimation, true);
-            animator.SetBool(jumpAnimation, false);
-            animator.SetBool(runAnimation, false);
+            animator.SetBool("Idle", true);
+            animator.SetBool("Jump", false);
+            animator.SetBool("Run", false);
         }
 
         if (movementX < 0 && isGrounded)
         {
-            animator.SetBool(runAnimation, true);
-            animator.SetBool(jumpAnimation, false);
-            animator.SetBool(idleAnimation, false);
+            animator.SetBool("Run", true);
+            animator.SetBool("Jump", false);
+            animator.SetBool("Idle", false);
             CreateDust();
         }
     }
@@ -265,9 +222,9 @@ public class Character : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            animator.SetTrigger(attackAnimation);
-            FindObjectOfType<AudioManager>().Play("AttackSound1");
-            FindObjectOfType<AudioManager>().Play("AttackSound2");
+            animator.SetTrigger("Attack");
+            FindObjectOfType<AudioManager>().Play("AttackSound (1)");
+            FindObjectOfType<AudioManager>().Play("AttackSound (2)");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackrange, enemyLayers);
 
             foreach (Collider2D enemy in hitEnemies)
@@ -301,17 +258,17 @@ public class Character : MonoBehaviour
 
     public void CheckHearts()
     {
-        if(currentHealthPlayer < 1)
+        if(_currentHealthCharacter < 1)
         {
             hearts[0].gameObject.SetActive(false);
         }
 
-        else if(currentHealthPlayer < 2)
+        else if(_currentHealthCharacter < 2)
         {
             hearts[1].gameObject.SetActive(false);
         }
 
-        else if (currentHealthPlayer < 3)
+        else if (_currentHealthCharacter < 3)
         {
             hearts[2].gameObject.SetActive(false);
         }
@@ -323,21 +280,21 @@ public class Character : MonoBehaviour
         if ((CollisionWithThorns == true || CollisionWithEnemy == true) && counter >= 1)
         {
             FindObjectOfType<AudioManager>().Play("TakeDamageSound");
-            animator.SetTrigger(takeDamageAnimation);
-            currentHealthPlayer -= 1;
+            animator.SetTrigger("TakeDamage");
+            _currentHealthCharacter -= 1;
 
             Debug.Log("Player has been hit");
             counter = 0;
             transform.position = CheckPoint.ReachedPoint;
         }
 
-        if (currentHealthPlayer <= 0)
+        if (_currentHealthCharacter <= 0)
         {
             //animator.SetBool("Dead", true);
             Debug.Log("Playerdied = true");
             playerDied = true;
             ScoreManager.instance2.ChangeDeathCounter();
-            currentHealthPlayer = 3;
+            _currentHealthCharacter = 3;
         }
 
     }
@@ -347,8 +304,8 @@ public class Character : MonoBehaviour
     {
         if(Input.GetButtonDown("Dash") && canDash && Time.time >= invincibleTime)
         {
-            animator.SetTrigger(dashAnimation);
-            FindObjectOfType<AudioManager>().Play("Dash");
+            animator.SetTrigger("Dash");
+            FindObjectOfType<AudioManager>().Play("DashSound");
             CreateDashTrail();
             isDashing = true;
             canDash = false;
@@ -390,5 +347,3 @@ public class Character : MonoBehaviour
         dust.Play();
     }
 }
-
-// control k + c und control k + u alles aukommentieren

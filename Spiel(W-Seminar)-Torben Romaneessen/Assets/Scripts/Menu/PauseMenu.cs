@@ -97,7 +97,7 @@ public class PauseMenu : MonoBehaviour
 
     private void GameOver()
     {
-        FindObjectOfType<AudioManager>().Play("DyingSound");
+        FindObjectOfType<AudioManager>().Play("GameOverSound");
         gameOverUI.SetActive(true);
         EventSystem.SetSelectedGameObject(RestartButton);
         Time.timeScale = 0f;
