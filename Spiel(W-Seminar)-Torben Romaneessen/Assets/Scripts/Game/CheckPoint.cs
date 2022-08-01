@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
@@ -13,13 +11,12 @@ public class CheckPoint : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Character"))
         {
-                ReachedPoint = this.transform.position;              
+            ReachedPoint = this.transform.position;
         }
 
         if (col.gameObject.CompareTag("Character"))
         {
             _flagAnimator.SetTrigger("NewCheckPoint");
-
         }
     }
 }

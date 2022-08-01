@@ -17160,11 +17160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596a50d0651f75f4b8d172e1e377c31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCoinCounter: {fileID: 1690313398}
-  coinsCollectedFinal: {fileID: 949470233}
-  totalDeaths: {fileID: 1120475423}
-  score: 0
-  totalDeathCounter: 0
+  _currentCoinCounter: {fileID: 1690313398}
+  _coinsCollectedFinal: {fileID: 949470233}
+  _totalDeaths: {fileID: 1120475423}
 --- !u!1 &314666959
 GameObject:
   m_ObjectHideFlags: 0
@@ -103917,8 +103915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd2f3495a06ccf5489ecba5c64383251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinValue: 1
-  coin: {fileID: 0}
 --- !u!70 &1893286568
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

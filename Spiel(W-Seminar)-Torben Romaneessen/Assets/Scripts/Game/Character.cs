@@ -47,7 +47,7 @@ public class Character : MonoBehaviour
     private bool _isGrounded;
 
 
-    public void Awake()
+    private void Awake()
     {
         _rigidBody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -103,7 +103,7 @@ public class Character : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
-        else if (_movementX > 0)
+        if (_movementX > 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
@@ -227,7 +227,7 @@ public class Character : MonoBehaviour
 
         if (_currentHealth <= 0)
         {
-            ScoreManager.instance2.ChangeDeathCounter();
+            ScoreManager.Instance.ChangeDeathCounter();
             IsDead = true;
             _currentHealth = 3;
         }
@@ -300,7 +300,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    // On exiting the platform the characters movements are independent of the platforms one.
+    // On exiting the platform the characters movements are independent of the platforms movements.
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Platform"))

@@ -1,44 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager instance2;
-    //public TextMeshProUGUI text;
-    //public TextMeshProUGUI endtext;
-    //public TextMeshProUGUI totalDeaths;
-    public Text currentCoinCounter;
-    public Text coinsCollectedFinal;
-    public Text totalDeaths;
+    private int _score;
+    public static ScoreManager Instance;
 
-    public int score;
-    public int totalDeathCounter;
+    [SerializeField]
+    private Text _currentCoinCounter;
+    [SerializeField]
+    private Text _coinsCollectedFinal;
+    [SerializeField]
+    private Text _totalDeaths;
 
-    void Start()
+
+    private void Start()
     {
-        if(instance2 == null)
+        if (Instance == null)
         {
-            instance2 = this;
+            Instance = this;
         }
 
-        totalDeaths.text = PlayerPrefs.GetInt("totalDeathCounter").ToString();
+        _totalDeaths.text = PlayerPrefs.GetInt("totalDeathCounter").ToString();
     }
-
 
     public void ChangeScore(int coinValue)
     {
-        score += coinValue;
-        currentCoinCounter.text = "X" + score.ToString();
-        coinsCollectedFinal.text = "X" + score.ToString();
+        _score += coinValue;
+        _currentCoinCounter.text = "X" + _score.ToString();
+        _coinsCollectedFinal.text = "X" + _score.ToString();
     }
 
-    
     public void ChangeDeathCounter()
     {
         PlayerPrefs.SetInt("totalDeathCounter", PlayerPrefs.GetInt("totalDeathCounter") + 1);
-        totalDeaths.text = PlayerPrefs.GetInt("totalDeathCounter").ToString();
+        _totalDeaths.text = PlayerPrefs.GetInt("totalDeathCounter").ToString();
     }
 }

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,13 +11,12 @@ public class EndPoint : MonoBehaviour
 
     public void LevelPassed()
     {
-        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        int _currentLevel = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentLevel >= PlayerPrefs.GetInt("levelsUnlocked"))
+        if (_currentLevel >= PlayerPrefs.GetInt("levelsUnlocked") && _currentLevel >= 4)
         {
-            PlayerPrefs.SetInt("levelsUnlocked", currentLevel + 1);
+            PlayerPrefs.SetInt("levelsUnlocked", _currentLevel + 1);
         }
-        Debug.Log("LEVEL " + PlayerPrefs.GetInt("levelsUnlocked") + " UNLOCKED");
 
         LevelCompleted = true;
     }
