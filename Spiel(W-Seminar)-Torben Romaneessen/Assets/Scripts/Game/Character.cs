@@ -164,7 +164,12 @@ public class Character : MonoBehaviour
             }
         }
     }
-
+    private void OnDrawGizmosSelected()
+    {
+        if (_attackPoint == null)
+            return;
+        Gizmos.DrawWireSphere(_attackPoint.position, AttackRange);
+    }
 
     private void Dash()
     {

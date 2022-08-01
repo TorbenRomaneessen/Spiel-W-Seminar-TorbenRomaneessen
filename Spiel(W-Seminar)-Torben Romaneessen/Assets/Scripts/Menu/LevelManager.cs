@@ -1,31 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
-    int levelsUnlocked;
-    public static LevelManager instance;
-    public GameObject levelPage1;
-    public GameObject levelPage2;
+    private int _levelsUnlocked;
+    //public static LevelManager Instance;
+    [SerializeField]
+    private GameObject _levelPage1;
+    [SerializeField]
+    private GameObject _levelPage2;
 
-    public Button[] buttons;
+    private Button[] _buttons;
 
 
     void Start()
     {
-        //PlayerPrefs.SetInt("levelsUnlocked", 1);
-        levelsUnlocked = PlayerPrefs.GetInt("levelsUnlocked", 1);
+        _levelsUnlocked = PlayerPrefs.GetInt("levelsUnlocked", 1);
 
-        for (int i = 0; i < buttons.Length; i++)
+        for (int i = 0; i < _buttons.Length; i++)
         {
-            buttons[i].interactable = false;
+            _buttons[i].interactable = false;
         }
 
-        for (int i = 0; i < levelsUnlocked; i++)
+        for (int i = 0; i < _levelsUnlocked; i++)
         {
-            buttons[i].interactable = true;
+            _buttons[i].interactable = true;
         }
     }
 
@@ -40,14 +39,14 @@ public class LevelManager : MonoBehaviour
     public void LoadNextPage()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
-        levelPage1.SetActive(false);
-        levelPage2.SetActive(true);
+        _levelPage1.SetActive(false);
+        _levelPage2.SetActive(true);
     }
 
     public void LoadPreviousPage()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
-        levelPage1.SetActive(true);
-        levelPage2.SetActive(false);
+        _levelPage1.SetActive(true);
+        _levelPage2.SetActive(false);
     }
 }
