@@ -26807,7 +26807,6 @@ MonoBehaviour:
   levelPage1: {fileID: 0}
   levelPage2: {fileID: 0}
   buttons: []
-  levelpassed: 0
 --- !u!4 &513948071
 Transform:
   m_ObjectHideFlags: 0
@@ -33020,18 +33019,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317e0172acc43874dafe105f68a6df39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealthCharacter: 3
-  hearts:
+  _currentHealth: 3
+  _hearts:
   - {fileID: 625715987}
   - {fileID: 801136135}
   - {fileID: 1776546448}
+  _dashTrail: {fileID: 860170869}
+  _dust: {fileID: 1965261247}
   _attackPoint: {fileID: 323911665}
   _enemyLayers:
     serializedVersion: 2
     m_Bits: 2048
-  _dashTrail: {fileID: 860170869}
-  _dust: {fileID: 1965261247}
-  levelPassed: 0
 --- !u!61 &641706886
 BoxCollider2D:
   m_ObjectHideFlags: 0
