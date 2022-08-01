@@ -4,82 +4,72 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    //////////EnemyCharacteristics//////////
-    public int maxhealthenemy = 3;
-    private int currenthealthenemy;
-    private float timepassed = 0;
+    private const int MaxHealth = 3;
+    private int _currentHealth;
+    private float _timePassed;
+    private const float Speed = 0.002f;
 
-    //////////EnemyProperties//////////
-    public Transform enemy;
-    public GameObject turtle;
-    private SpriteRenderer spriteRendererEnemy;
-    public Animator animator;
+    private Transform _transform;
+    private SpriteRenderer _spriteRenderer;
+    private Animator _animator;
   
-
 
     public void Awake()
     {
-        enemy = GetComponent<Transform>();
-        spriteRendererEnemy = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
+        _transform = GetComponent<Transform>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
     }
-
 
     void Start()
     {
-        currenthealthenemy = maxhealthenemy;
+        _currentHealth = MaxHealth;
     }
-
 
     private void Update()
     {
-        StartCoroutine("EnemyMovement");
+        StartCoroutine(nameof(EnemyMovement));
     }
-
-
-    public void TakeDamage(int damage)
-    {
-        //this.transform.position = new Vector3(enemy.position.x + 0.5f, enemy.position.y, enemy.position.z);
-        currenthealthenemy -= damage;
-        animator.SetTrigger("Hurt");
-
-        if (currenthealthenemy <= 0)
-        {
-            Die();
-        }
-    }
-
-
-    void Die()
-    {
-        Debug.Log("Enemy died!");
-
-        animator.SetBool("Dead", true);
-
-        //Destroy(turtle);
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-    }
-
 
     private IEnumerator EnemyMovement()
     {
 
-        if (timepassed < 1)
+        if (_timePassed < 1)
         {
             yield return new WaitForSeconds(1f);
 
-            this.transform.position = new Vector3(enemy.position.x + 0.0015f, enemy.position.y, enemy.position.z);
-            this.transform.localScale = new Vector3(-1, enemy.localScale.y, enemy.localScale.z);
-            timepassed = timepassed + 1;
+            this.transform.position = new Vector3(_transform.position.x + Speed, _transform.position.y, _transform.position.z);
+            this.transform.localScale = new Vector3(-1, _transform.localScale.y, _transform.localScale.z);
+            _timePassed += 1;
         }
 
         else
         {
             yield return new WaitForSeconds(1f);
-            this.transform.position = new Vector3(enemy.position.x - 0.0015f, enemy.position.y, enemy.position.z);
-            this.transform.localScale = new Vector3(1, enemy.localScale.y, enemy.localScale.z);
-            timepassed = timepassed - 1;
+
+            this.transform.position = new Vector3(_transform.position.x - Speed, _transform.position.y, _transform.position.z);
+            this.transform.localScale = new Vector3(1, _transform.localScale.y, _transform.localScale.z);
+
+            _timePassed -= 1;
         }
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        _currentHealth -= damage;
+        _animator.SetTrigger("Hurt");
+
+        if (_currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        _animator.SetBool("Dead", true);
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
     }
 }

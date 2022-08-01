@@ -4123,7 +4123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 179287610}
+      - m_Target: {fileID: 1053636550}
         m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
         m_MethodName: CloseDialog
         m_Mode: 1
@@ -9433,66 +9433,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &179287608
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 179287609}
-  - component: {fileID: 179287610}
-  m_Layer: 0
-  m_Name: Dialog
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &179287609
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179287608}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -531, y: 236, z: -1.8039526}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1053636547}
-  m_Father: {fileID: 992608478}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &179287610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179287608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6814251244579784aa3488bd38c9be9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDisplay: {fileID: 1508711220}
-  sentences:
-  - Hello fellow Warrior!
-  - Are you on your way to the secret treasue as well?
-  - Not very talkative, are you?
-  - Well, I have seen hundreds wandering these paths in my days...
-  - And I have yet to see someone return.
-  - 'Though, I must warn you... '
-  - Dangers lie in the hidden!
-  - Anyways, good luck! Maybe we will cross paths again soon.
-  - 
-  typingSpeed: 0.04
-  isTalking: 0
-  continueButton: {fileID: 504715363}
-  DialogBox: {fileID: 179287608}
 --- !u!1 &179807839
 GameObject:
   m_ObjectHideFlags: 0
@@ -22393,7 +22333,7 @@ GameObject:
   - component: {fileID: 417160548}
   - component: {fileID: 417160547}
   m_Layer: 5
-  m_Name: Resume-Canvas
+  m_Name: LevelCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22411,14 +22351,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34387b62e92758b4ab5b54a8124dc2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finishText: 0
-  pauseMenuUI: {fileID: 51165702}
-  gameOverUI: {fileID: 1021905171}
-  levelCompletedUI: {fileID: 513469882}
-  EventSystem: {fileID: 2119075257}
-  ResumeButton: {fileID: 1935923214}
-  RestartButton: {fileID: 841306145}
-  NextLevelButton: {fileID: 960999227}
+  FinishText: 0
+  _pauseMenuUI: {fileID: 51165702}
+  _gameOverUI: {fileID: 1021905171}
+  _levelCompletedUI: {fileID: 513469882}
+  _eventSystem: {fileID: 2119075257}
+  _resumeButton: {fileID: 1935923214}
+  _restartButton: {fileID: 841306145}
+  _nextLevelButton: {fileID: 960999227}
 --- !u!114 &417160548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22496,7 +22436,7 @@ RectTransform:
   - {fileID: 51165703}
   - {fileID: 1021905172}
   - {fileID: 513469883}
-  - {fileID: 992608478}
+  - {fileID: 1053636547}
   - {fileID: 1199577070}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -26255,7 +26195,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 179287610}
+      - m_Target: {fileID: 1053636550}
         m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
         m_MethodName: NextSentence
         m_Mode: 1
@@ -33104,7 +33044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641706884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 60.68, y: 8.51, z: 0}
+  m_LocalPosition: {x: -33.95, y: 8.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55479,83 +55419,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &992608477
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 992608478}
-  - component: {fileID: 992608480}
-  - component: {fileID: 992608479}
-  m_Layer: 5
-  m_Name: Dialog
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &992608478
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992608477}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 179287609}
-  m_Father: {fileID: 417160551}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -819, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &992608479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992608477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &992608480
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992608477}
-  m_CullTransparentMesh: 1
 --- !u!1 &993941067
 GameObject:
   m_ObjectHideFlags: 0
@@ -59416,6 +59279,7 @@ GameObject:
   - component: {fileID: 1053636547}
   - component: {fileID: 1053636549}
   - component: {fileID: 1053636548}
+  - component: {fileID: 1053636550}
   m_Layer: 5
   m_Name: DialogBox
   m_TagString: Untagged
@@ -59431,19 +59295,19 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053636546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.4431626}
+  m_LocalPosition: {x: 0, y: 0, z: -0.36079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1508711222}
   - {fileID: 504715367}
   - {fileID: 72490102}
-  m_Father: {fileID: 179287609}
-  m_RootOrder: 0
+  m_Father: {fileID: 417160551}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 773, y: -125}
+  m_AnchoredPosition: {x: -577, y: 651}
   m_SizeDelta: {x: 1000, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053636548
@@ -59484,6 +59348,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053636546}
   m_CullTransparentMesh: 1
+--- !u!114 &1053636550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053636546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6814251244579784aa3488bd38c9be9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textDisplay: {fileID: 1508711220}
+  _sentences:
+  - Hello fellow Warrior!
+  - Are you on your way to the secret treasure as well?
+  - Not very talkative, are you?
+  - "Well, I have seen hundreds wandering these paths in my days\u2026"
+  - And I have yet to see someone return.
+  - "Though, I must warn you\u2026"
+  - Dangers lie in the hidden!
+  - Anyways, good luck! Maybe we will cross paths again soon.
+  - 
+  IsTalking: 1
+  ContinueButton: {fileID: 504715363}
+  DialogBox: {fileID: 1053636546}
 --- !u!1 &1054864828
 GameObject:
   m_ObjectHideFlags: 0
@@ -77543,9 +77433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc388ae64557204d9374e143c6890eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1407879783}
   Barrier: {fileID: 2073900411}
-  startDialog: 0
 --- !u!61 &1407879786
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -82319,10 +82207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0e7eeb46a756e45a2e9577b8c6b3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealthenemy: 100
-  enemy: {fileID: 1493102935}
-  turtle: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!61 &1493102932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105775,7 +105659,7 @@ GameObject:
   - component: {fileID: 1938209905}
   - component: {fileID: 1938209904}
   m_Layer: 5
-  m_Name: Player-Canvas
+  m_Name: PlayerCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

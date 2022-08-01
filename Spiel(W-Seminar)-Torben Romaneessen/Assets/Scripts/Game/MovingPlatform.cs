@@ -21,7 +21,7 @@ public class MovingPlatform : MonoBehaviour
 
     private void Update()
     {
-        if (Dialog.instance.isTalking == false)
+        if (Dialog.Instance.IsTalking == false)
         {
             if (transform.position == position1.position)
             {

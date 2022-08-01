@@ -1,34 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
-    public static bool GameIsOver = false;
-    public bool finishText;
-    public GameObject pauseMenuUI;
-    public GameObject gameOverUI;
-    public GameObject levelCompletedUI;
+    public static bool GameIsPaused;
+    public static bool GameIsOver;
+    public bool FinishText;
 
-    public static PauseMenu instance;
+    [SerializeField]
+    private GameObject _pauseMenuUI;
+    [SerializeField]
+    private GameObject _gameOverUI;
+    [SerializeField]
+    private GameObject _levelCompletedUI;
 
-    public EventSystem EventSystem;
-    public GameObject ResumeButton;
-    public GameObject RestartButton;
-    public GameObject NextLevelButton;
+    public static PauseMenu Instance;
+
+    [SerializeField]
+    private EventSystem _eventSystem;
+    [SerializeField]
+    private GameObject _resumeButton;
+    [SerializeField]
+    private GameObject _restartButton;
+    [SerializeField]
+    private GameObject _nextLevelButton;
 
     private void Start()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
 
-        EventSystem = EventSystem.current;
-
+        _eventSystem = EventSystem.current;
     }
 
 
@@ -39,17 +44,15 @@ public class PauseMenu : MonoBehaviour
             if(GameIsPaused)
             {
                 Resume();
-                finishText = true;
+                FinishText = true;
 
             }
 
             else
             {
-                    Pause();
-                    Dialog.instance.DialogBox.SetActive(false);
-                    Dialog.instance.continueButton.SetActive(false);
-                    
-
+                Pause();
+                Dialog.Instance.DialogBox.SetActive(false);
+                Dialog.Instance.ContinueButton.SetActive(false);
             }
         }
 
@@ -69,37 +72,39 @@ public class PauseMenu : MonoBehaviour
 
 
     public void Resume()
-   {
-        pauseMenuUI.SetActive(false);
+    {
         FindObjectOfType<AudioManager>().Play("ClickSound");
+        _pauseMenuUI.SetActive(false);
+
         Time.timeScale = 1f;
         GameIsPaused = false;
-        finishText = true;
+        FinishText = true;
 
-        if (Dialog.instance.isTalking == true)
+        if (Dialog.Instance.IsTalking == true)
         {
-            Dialog.instance.DialogBox.SetActive(true);
-            Dialog.instance.continueButton.SetActive(true);
+            Dialog.Instance.DialogBox.SetActive(true);
+            Dialog.Instance.ContinueButton.SetActive(true);
         }
     }
 
 
    private void Pause()
    {
-        pauseMenuUI.SetActive(true);
         FindObjectOfType<AudioManager>().Play("ClickSound");
+        _pauseMenuUI.SetActive(true);
+        _eventSystem.SetSelectedGameObject(_resumeButton);
+
         Time.timeScale = 0f;
         GameIsPaused = true;
-        EventSystem.SetSelectedGameObject(ResumeButton);
-
    }
 
 
     private void GameOver()
     {
         FindObjectOfType<AudioManager>().Play("GameOverSound");
-        gameOverUI.SetActive(true);
-        EventSystem.SetSelectedGameObject(RestartButton);
+        _gameOverUI.SetActive(true);
+        _eventSystem.SetSelectedGameObject(_restartButton);
+
         Time.timeScale = 0f;
     }
 
@@ -107,8 +112,9 @@ public class PauseMenu : MonoBehaviour
     private void LevelCompleted()
     {
         FindObjectOfType<AudioManager>().Play("LevelCompletedSound");
-        levelCompletedUI.SetActive(true);
-        EventSystem.SetSelectedGameObject(NextLevelButton);
+        _levelCompletedUI.SetActive(true);
+        _eventSystem.SetSelectedGameObject(_nextLevelButton);
+
         Time.timeScale = 0f;
     }
 
@@ -117,6 +123,7 @@ public class PauseMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
         Time.timeScale = 1f;
     }
 
@@ -124,26 +131,25 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
-        Debug.Log("Game has been restarted!");
-        gameOverUI.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsOver = false;
+        _gameOverUI.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        Time.timeScale = 1f;
     }
 
 
     public void LoadMenu()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
-        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+
+        Time.timeScale = 1f;
     }
 
 
     public void QuitGame()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
-        Debug.Log("Quitting game...");
         Application.Quit();
     }
 }

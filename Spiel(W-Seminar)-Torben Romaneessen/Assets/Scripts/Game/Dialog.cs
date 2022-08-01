@@ -1,21 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class Dialog : MonoBehaviour
 {
-    //public TextMeshProUGUI textDisplay;
-    public Text textDisplay;
-    public string[] sentences;
-    private int index;
-    public float typingSpeed;
-    public bool isTalking = true;
+    [SerializeField]
+    private Text _textDisplay;
+    [SerializeField]
+    private string[] _sentences;
+    private int _index;
+    private const float TypingSpeed = 0.04f;
+    public bool IsTalking = true;
 
-
-    public static Dialog instance;
-    public GameObject continueButton;
+    public static Dialog Instance;
+    public GameObject ContinueButton;
     public GameObject DialogBox;
 
 
@@ -23,79 +21,76 @@ public class Dialog : MonoBehaviour
     {
         StartCoroutine(Type());
 
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
 
-        isTalking = true;
-
+        IsTalking = true;
     }
 
 
     private void Update()
     {
-        if(textDisplay.text == sentences[index])
+        if (_textDisplay.text == _sentences[_index])
         {
-            continueButton.SetActive(true);
+            ContinueButton.SetActive(true);
         }
 
-        if(PauseMenu.instance.finishText)
+        if (PauseMenu.Instance.FinishText)
         {
-            textDisplay.text = sentences[index];
-            PauseMenu.instance.finishText = false;
+            _textDisplay.text = _sentences[_index];
+            PauseMenu.Instance.FinishText = false;
         }
 
-        if (index == sentences.Length - 1 && textDisplay.text == sentences[index])
+        if (_index == _sentences.Length - 1 && _textDisplay.text == _sentences[_index])
         {
             DialogBox.SetActive(false);
-            instance.isTalking = false;
-            OldGuy.instance.Barrier.SetActive(false);
+            Instance.IsTalking = false;
+            OldGuy.Instance.Barrier.SetActive(false);
         }
     }
 
-
     IEnumerator Type()
     {
-        //FindObjectOfType<AudioManager>().Play("DialogSound");
         DialogBox.SetActive(true);
-        foreach (char letter in sentences[index].ToCharArray())
+        foreach (char letter in _sentences[_index].ToCharArray())
         {
-            textDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            _textDisplay.text += letter;
+            yield return new WaitForSeconds(TypingSpeed);
            
         }
-        continueButton.SetActive(true);
+
+        ContinueButton.SetActive(true);
     }
 
 
     public void NextSentence()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
-        continueButton.SetActive(false);
+        ContinueButton.SetActive(false);
 
-        if (index < sentences.Length - 1)
+        if (_index < _sentences.Length - 1)
         {
-            index++;
-            textDisplay.text = "";
+            _index++;
+            _textDisplay.text = "";
             StartCoroutine(Type());
-            isTalking = true;
+            IsTalking = true;
         }
 
         else
         {
-            textDisplay.text = "";
-            continueButton.SetActive(false);
-            OldGuy.instance.Barrier.SetActive(false);
+            _textDisplay.text = "";
+            ContinueButton.SetActive(false);
+            OldGuy.Instance.Barrier.SetActive(false);
         }
     }
-
 
     public void CloseDialog()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         DialogBox.SetActive(false);
-        OldGuy.instance.Barrier.SetActive(false);
-        instance.isTalking = false;
+        OldGuy.Instance.Barrier.SetActive(false);
+        Instance.IsTalking = false;
     }
 }

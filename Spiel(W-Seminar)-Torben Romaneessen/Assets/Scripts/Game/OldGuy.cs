@@ -1,21 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OldGuy : MonoBehaviour
 {
-    public Animator animator;
+    private Animator _animator;
     public GameObject Barrier;
-    public static OldGuy instance;
-    public bool startDialog;
-
+    public static OldGuy Instance;
 
 
     void Start()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
     }
 
@@ -27,28 +23,19 @@ public class OldGuy : MonoBehaviour
 
     public void Awake()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     public void TalkAnimation()
     {
-        if(Dialog.instance.isTalking == false)
+        if(Dialog.Instance.IsTalking == false)
         {
-            animator.SetBool("isTalking", true);
-            Debug.Log("Functining");
+            _animator.SetBool("isTalking", true);
         }
 
         else
         {
-            animator.SetBool("isTalking", false);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Character"))
-        {
-            startDialog = true;
+            _animator.SetBool("isTalking", false);
         }
     }
 }
