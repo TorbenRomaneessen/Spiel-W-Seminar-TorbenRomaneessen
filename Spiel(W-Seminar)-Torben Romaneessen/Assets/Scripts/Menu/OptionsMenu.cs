@@ -6,78 +6,81 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-    public AudioMixer audioMixer;
-    public TMPro.TMP_Dropdown resolutionDropdown;
-    public Slider slider;
+    [SerializeField]
+    private AudioMixer _audioMixer;
+    [SerializeField]
+    private TMPro.TMP_Dropdown _resolutionDropdown;
+    [SerializeField]
+    private Slider _slider;
 
-    Resolution[] resolutions;
-
+    [SerializeField]
+    private Resolution[] _resolutions;
 
 
     private void Awake()
     {
-        slider.value = PlayerPrefs.GetInt("sliderSavedNumber");
+        _slider.value = PlayerPrefs.GetInt("sliderSavedNumber");
     }
 
 
     private void Start()
     {
-        resolutions = Screen.resolutions;
-        resolutionDropdown.ClearOptions();
+        _resolutions = Screen.resolutions;
+        _resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
 
         int currentResolutionIndex = 0;
 
-        for(int i = 0; i < resolutions.Length; i++)
+        for(int i = 0; i < _resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
+            string option = _resolutions[i].width + " x " + _resolutions[i].height;
             options.Add(option);
 
-            if(resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)// original resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height
+            if(_resolutions[i].width == Screen.width && _resolutions[i].height == Screen.height)// original resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height
             {
                 currentResolutionIndex = i;
             }
         }
 
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        _resolutionDropdown.AddOptions(options);
+        _resolutionDropdown.value = currentResolutionIndex;
+        _resolutionDropdown.RefreshShownValue();
 
-        audioMixer.SetFloat("volume", PlayerPrefs.GetInt("sliderSavedNumber"));
+        _audioMixer.SetFloat("volume", PlayerPrefs.GetInt("sliderSavedNumber"));
     }
 
 
     private void Update()
     {
-        PlayerPrefs.SetInt("sliderSavedNumber", (int)slider.value);
+        PlayerPrefs.SetInt("sliderSavedNumber", (int)_slider.value);
     }
 
 
-    public void SetResolution(int resolutionIndex)
+    private void SetResolution(int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
+        FindObjectOfType<AudioManager>().Play("ClickSound");
+        Resolution resolution = _resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-        FindObjectOfType<AudioManager>().Play("ClickSound");
     }
 
 
-    public void SetVolume(float volume)
+    private void SetVolume(float volume)
     {
-        audioMixer.SetFloat("volume", volume);//original ("volume, volume)Mathf.Log10(volume * 20)
         FindObjectOfType<AudioManager>().Play("ClickSound");
+        _audioMixer.SetFloat("volume", volume);
     }
 
 
-    public void SetQuality(int qualityIndex)
+    private void SetQuality(int qualityIndex)
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         QualitySettings.SetQualityLevel(qualityIndex);
-        FindObjectOfType<AudioManager>().Play("ClickSound");
     }
 
 
-    public void SetFullscreen(bool isFullscreen)
+    private void SetFullscreen(bool isFullscreen)
     {
-        Screen.fullScreen = isFullscreen;
         FindObjectOfType<AudioManager>().Play("ClickSound");
+        Screen.fullScreen = isFullscreen;
     }
 }

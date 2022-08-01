@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject _levelPage2;
 
+    [SerializeField]
     private Button[] _buttons;
 
 
@@ -28,22 +29,20 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    
-    public void LoadLevel(int levelIndex)
+    private void LoadLevel(int levelIndex)
     {
         FindObjectOfType<AudioManager>().Play("StartGameSound");
         SceneManager.LoadScene(levelIndex);
     }
 
-
-    public void LoadNextPage()
+    private void LoadNextPage()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         _levelPage1.SetActive(false);
         _levelPage2.SetActive(true);
     }
 
-    public void LoadPreviousPage()
+    private void LoadPreviousPage()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         _levelPage1.SetActive(true);

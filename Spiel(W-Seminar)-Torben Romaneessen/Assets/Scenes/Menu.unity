@@ -2491,9 +2491,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38a37d8cb9c3c34c8fb366a4b57bf8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
-  resolutionDropdown: {fileID: 1474732621}
-  slider: {fileID: 850788179}
+  _audioMixer: {fileID: 24100000, guid: 66d51f148ee172c4897d0320ee02638a, type: 2}
+  _resolutionDropdown: {fileID: 1474732621}
+  _slider: {fileID: 850788179}
 --- !u!114 &647458912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2589,7 +2589,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 698836617}
-  - component: {fileID: 698836618}
   m_Layer: 0
   m_Name: SwipeLoader
   m_TagString: Untagged
@@ -2613,20 +2612,6 @@ Transform:
   m_Father: {fileID: 647458915}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &698836618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698836616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722ca4490f0ec1647aafd89e34c23d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition: {fileID: 0}
-  transitionTime: 1.15
 --- !u!1 &747073423
 GameObject:
   m_ObjectHideFlags: 0

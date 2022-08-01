@@ -1047,6 +1047,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelPage1: {fileID: 345863682}
   _levelPage2: {fileID: 999155596}
+  _buttons:
+  - {fileID: 826126077}
+  - {fileID: 50439154}
+  - {fileID: 322189233}
+  - {fileID: 167038200}
 --- !u!114 &345863684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,6 +1868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelPage1: {fileID: 345863682}
   _levelPage2: {fileID: 999155596}
+  _buttons: []
 --- !u!114 &999155599
 MonoBehaviour:
   m_ObjectHideFlags: 0
