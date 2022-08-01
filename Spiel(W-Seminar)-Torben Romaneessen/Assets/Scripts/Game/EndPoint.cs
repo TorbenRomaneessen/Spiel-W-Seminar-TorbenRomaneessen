@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class EndPoint : MonoBehaviour
 {
     public static bool LevelCompleted;
-
+    [SerializeField]
+    private Animator _flagAnimator;
 
 
     public void LevelPassed()
@@ -22,15 +23,21 @@ public class EndPoint : MonoBehaviour
         LevelCompleted = true;
     }
 
-
     public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Character"))
         {
-            LevelPassed();
-            Debug.Log("You have completed this Level!");
-            Destroy(this.gameObject);
+            _flagAnimator.SetTrigger("LevelCompleted");
         }
+
+        StartCoroutine(nameof(ShowLevelCompletedScene));
+    }
+    
+    private IEnumerator ShowLevelCompletedScene()
+    {
+        yield return new WaitForSeconds(1f);
+        LevelPassed();
+        Destroy(this.gameObject);
     }
 }
  

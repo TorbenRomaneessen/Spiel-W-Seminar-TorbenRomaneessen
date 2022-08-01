@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class CharacterCamera : MonoBehaviour
 {
-    private Transform character;
-    private Vector3 tempos;
-
+    private Transform _characterTransform;
+    private Vector3 _newPosition;
 
 
     void Start()
     {
-        character = GameObject.FindWithTag("Character").transform;
+        _characterTransform = GameObject.FindWithTag("Character").transform;
     }
-
 
     void Update()
     {
-        tempos = transform.position;
-        tempos.x = character.position.x;
-        transform.position = tempos;
+        _newPosition = transform.position;
+        _newPosition.x = _characterTransform.position.x;
+        transform.position = _newPosition;
     }
 }
