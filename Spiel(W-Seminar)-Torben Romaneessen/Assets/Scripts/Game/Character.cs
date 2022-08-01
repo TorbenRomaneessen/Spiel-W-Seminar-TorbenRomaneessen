@@ -4,55 +4,54 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    //////////CharacterCharacteristics//////////
+    [Header("Characteristics")]
     [SerializeField]
-    private int _currentHealthCharacter = 3;
+    private int _currentHealth = 3;
     private const float Speed = 6f;
     private const float JumpForce = 8f;
 
+    [Header("Attack")]
     private const float AttackRange = 1.1f;
     private const int AttackDamage = 1;
     private const float AttackRate = 2f;
     private float _nextAttackTime = 0f;
-
-    private float _invincibleTimer;
-
-    private float _dashTimer = 0f;
-    private const float DashRate = 2f;
-    private const float DashingVelocity = 20f;
-    private const float DashingTime = 0.1f;
-    private Vector2 _dashingDirection;
-
-
-    [SerializeField]
-    private GameObject[] hearts;
-    public static bool PlayerDied;
-
-
-    private Transform _transform;
-    private Rigidbody2D _rigidBody2D;
-    private Animator _animator;
     [SerializeField]
     private Transform _attackPoint;
     [SerializeField]
     private LayerMask _enemyLayers;
-    [SerializeField]
 
+    private float _invincibleTimer;
+
+    [Header("Dash")]
+    private float _dashTimer = 0f;
+    private const float DashingRate = 2f;
+    private const float DashingVelocity = 20f;
+    private const float DashingTime = 0.1f;
+    private bool _isDashing;
+    private bool _canDash;
+    private Vector2 _dashingDirection;
+
+    [Header("Character Components")]
+    [SerializeField]
+    private GameObject[] hearts;
+    private Transform _transform;
+    private Rigidbody2D _rigidBody2D;
+    private Animator _animator;
+    [SerializeField]
     private ParticleSystem _dashTrail;
     [SerializeField]
     private ParticleSystem _dust;
+
+    public static bool IsDead;
 
 
 
     private float _movementX;
 
-    //////////Boolean//////////
     private bool _collisionWithThorns;
     private bool _collisionWithEnemy;
     private bool _isGrounded = false;
-    private bool _isDashing;
-    private bool _canDash;
-    public bool levelPassed;
+
 
   
     public void Awake()
@@ -250,17 +249,17 @@ public class Character : MonoBehaviour
 
     public void CheckHearts()
     {
-        if(_currentHealthCharacter < 1)
+        if(_currentHealth < 1)
         {
             hearts[0].gameObject.SetActive(false);
         }
 
-        else if(_currentHealthCharacter < 2)
+        else if(_currentHealth < 2)
         {
             hearts[1].gameObject.SetActive(false);
         }
 
-        else if (_currentHealthCharacter < 3)
+        else if (_currentHealth < 3)
         {
             hearts[2].gameObject.SetActive(false);
         }
@@ -273,19 +272,19 @@ public class Character : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("TakeDamageSound");
             _animator.SetTrigger("TakeDamage");
-            _currentHealthCharacter -= 1;
+            _currentHealth -= 1;
 
             Debug.Log("Player has been hit");
             _invincibleTimer = 0;
             transform.position = CheckPoint.ReachedPoint;
         }
 
-        if (_currentHealthCharacter <= 0)
+        if (_currentHealth <= 0)
         {
             Debug.Log("Playerdied = true");
-            PlayerDied = true;
+            IsDead = true;
             ScoreManager.instance2.ChangeDeathCounter();
-            _currentHealthCharacter = 3;
+            _currentHealth = 3;
         }
 
     }
@@ -308,7 +307,7 @@ public class Character : MonoBehaviour
             }
 
             StartCoroutine(nameof(StopDashing));
-            _dashTimer = Time.time + 1f / DashRate;
+            _dashTimer = Time.time + 1f / DashingRate;
         }
 
         if (_isDashing)

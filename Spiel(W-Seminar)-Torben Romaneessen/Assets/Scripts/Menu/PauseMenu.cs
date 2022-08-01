@@ -53,11 +53,11 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if (Character.PlayerDied == true)
+        if (Character.IsDead == true)
         {
             GameOver();
             GameIsOver = true;
-            Character.PlayerDied = false;
+            Character.IsDead = false;
         }
 
         if (EndPoint.LevelCompleted == true)
