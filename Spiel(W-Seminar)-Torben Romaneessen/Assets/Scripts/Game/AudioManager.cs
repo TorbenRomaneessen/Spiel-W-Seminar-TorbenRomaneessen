@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
 
         else
         {
+            // This prevents having multiple AudioManager in one scene.
             Destroy(gameObject);
             return;
         }

@@ -27,7 +27,7 @@ public class OptionsMenu : MonoBehaviour
     {
         _resolutions = Screen.resolutions;
         _resolutionDropdown.ClearOptions();
-        List<string> options = new List<string>();
+        List<string> options = new();
 
         int currentResolutionIndex = 0;
 
@@ -36,7 +36,7 @@ public class OptionsMenu : MonoBehaviour
             string option = _resolutions[i].width + " x " + _resolutions[i].height;
             options.Add(option);
 
-            if(_resolutions[i].width == Screen.width && _resolutions[i].height == Screen.height)// original resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height
+            if(_resolutions[i].width == Screen.width && _resolutions[i].height == Screen.height)
             {
                 currentResolutionIndex = i;
             }

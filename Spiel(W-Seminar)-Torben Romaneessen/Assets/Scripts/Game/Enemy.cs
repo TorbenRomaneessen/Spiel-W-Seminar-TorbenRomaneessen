@@ -12,16 +12,16 @@ public class Enemy : MonoBehaviour
     private Transform _transform;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
-  
 
-    public void Awake()
+
+    private void Awake()
     {
         _transform = GetComponent<Transform>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
     }
 
-    void Start()
+    private void Start()
     {
         _currentHealth = MaxHealth;
     }
@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
 
             this.transform.position = new Vector3(_transform.position.x + Speed, _transform.position.y, _transform.position.z);
             this.transform.localScale = new Vector3(-1, _transform.localScale.y, _transform.localScale.z);
+
             _timePassed += 1;
         }
 
@@ -66,7 +67,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Die()
+    private void Die()
     {
         _animator.SetBool("Dead", true);
         GetComponent<Collider2D>().enabled = false;

@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     private int _levelsUnlocked;
-    //public static LevelManager Instance;
     [SerializeField]
     private GameObject _levelPage1;
     [SerializeField]

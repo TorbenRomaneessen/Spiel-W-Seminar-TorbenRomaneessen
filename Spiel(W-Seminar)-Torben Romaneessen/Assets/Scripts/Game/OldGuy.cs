@@ -21,12 +21,12 @@ public class OldGuy : MonoBehaviour
         TalkAnimation();
     }
 
-    public void Awake()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
     }
 
-    public void TalkAnimation()
+    private void TalkAnimation()
     {
         if(Dialog.Instance.IsTalking == false)
         {

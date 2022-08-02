@@ -51,7 +51,7 @@ public class Dialog : MonoBehaviour
         }
     }
 
-    IEnumerator Type()
+    private IEnumerator Type()
     {
         DialogBox.SetActive(true);
         foreach (char letter in _sentences[_index].ToCharArray())
@@ -65,7 +65,7 @@ public class Dialog : MonoBehaviour
     }
 
 
-    public void NextSentence()
+    private void NextSentence()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         ContinueButton.SetActive(false);
@@ -86,7 +86,7 @@ public class Dialog : MonoBehaviour
         }
     }
 
-    public void CloseDialog()
+    private void CloseDialog()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         DialogBox.SetActive(false);

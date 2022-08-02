@@ -138,6 +138,7 @@ public class Character : MonoBehaviour
 
     private void Attack()
     {
+        // "Fire1" is the name Unity assigned this button.
         if (Input.GetButtonDown("Fire1"))
         {
             _animator.SetTrigger("Attack");
@@ -164,6 +165,7 @@ public class Character : MonoBehaviour
             }
         }
     }
+
     private void OnDrawGizmosSelected()
     {
         if (_attackPoint == null)
@@ -185,7 +187,6 @@ public class Character : MonoBehaviour
 
             if (_dashingDirection == Vector2.zero )
             {
-                // Checking in which direction the Character is turned.
                 if (_transform.rotation.y != 0)
                 {
                     _dashingDirection = new Vector2(-1, 0);

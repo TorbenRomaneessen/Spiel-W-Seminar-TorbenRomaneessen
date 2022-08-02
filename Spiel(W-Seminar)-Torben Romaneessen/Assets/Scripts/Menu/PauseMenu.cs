@@ -26,6 +26,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject _nextLevelButton;
 
+
     private void Start()
     {
         if (Instance == null)
@@ -37,48 +38,42 @@ public class PauseMenu : MonoBehaviour
     }
 
 
-    void Update()
+    private void Update()
     {
         if (Input.GetButtonDown("Cancel") && GameIsOver == false)
         {
             if(GameIsPaused)
             {
                 Resume();
-                FinishText = true;
-
             }
 
             else
             {
                 Pause();
-                Dialog.Instance.DialogBox.SetActive(false);
-                Dialog.Instance.ContinueButton.SetActive(false);
             }
         }
 
         if (Character.IsDead == true)
         {
             GameOver();
-            GameIsOver = true;
-            Character.IsDead = false;
         }
 
         if (EndPoint.LevelCompleted == true)
         {
             LevelCompleted();
-            EndPoint.LevelCompleted = false;
         }
     }
 
 
-    public void Resume()
+    private void Resume()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         _pauseMenuUI.SetActive(false);
 
-        Time.timeScale = 1f;
         GameIsPaused = false;
         FinishText = true;
+
+        Time.timeScale = 1f;
 
         if (Dialog.Instance.IsTalking == true)
         {
@@ -87,17 +82,18 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-
    private void Pause()
    {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         _pauseMenuUI.SetActive(true);
         _eventSystem.SetSelectedGameObject(_resumeButton);
 
-        Time.timeScale = 0f;
+        Dialog.Instance.DialogBox.SetActive(false);
+        Dialog.Instance.ContinueButton.SetActive(false);
         GameIsPaused = true;
-   }
 
+        Time.timeScale = 0f;
+   }
 
     private void GameOver()
     {
@@ -105,9 +101,11 @@ public class PauseMenu : MonoBehaviour
         _gameOverUI.SetActive(true);
         _eventSystem.SetSelectedGameObject(_restartButton);
 
+        GameIsOver = true;
+        Character.IsDead = false;
+
         Time.timeScale = 0f;
     }
-
 
     private void LevelCompleted()
     {
@@ -115,11 +113,12 @@ public class PauseMenu : MonoBehaviour
         _levelCompletedUI.SetActive(true);
         _eventSystem.SetSelectedGameObject(_nextLevelButton);
 
+        EndPoint.LevelCompleted = false;
+
         Time.timeScale = 0f;
     }
 
-
-    public void LoadNextLevel()
+    private void LoadNextLevel()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -127,8 +126,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-
-    public void Restart()
+    private void Restart()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         _gameOverUI.SetActive(false);
@@ -137,8 +135,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-
-    public void LoadMenu()
+    private void LoadMenu()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         SceneManager.LoadScene("Menu");
@@ -146,8 +143,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-
-    public void QuitGame()
+    private void QuitGame()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         Application.Quit();
