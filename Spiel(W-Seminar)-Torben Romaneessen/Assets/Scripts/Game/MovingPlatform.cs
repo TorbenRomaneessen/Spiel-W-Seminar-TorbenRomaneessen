@@ -15,6 +15,7 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField]
     private Transform _position4;
     private Vector3 _nextPosition;
+    private Transform _transform;
 
     [SerializeField]
     private float _speed = 2;
@@ -23,34 +24,35 @@ public class MovingPlatform : MonoBehaviour
     private void Start()
     {
         _nextPosition = _startPosition.position;
+        _transform = GetComponent<Transform>();
     }
 
     private void Update()
     {
         if (Dialog.Instance.IsTalking == false)
         {
-            if (transform.position == _position1.position)
+            if (_transform.position == _position1.position)
             {
                 _nextPosition = _position2.position;
             }
         }
 
-            if (transform.position == _position2.position)
+            if (_transform.position == _position2.position)
             {
-            _nextPosition = _position3.position;
+                _nextPosition = _position3.position;
             }
 
-            if (transform.position == _position3.position)
+            if (_transform.position == _position3.position)
             {
-            _nextPosition = _position4.position;
+                _nextPosition = _position4.position;
             }
 
-            if (transform.position == _position4.position)
+            if (_transform.position == _position4.position)
             {
-            _nextPosition = _position1.position;
+                _nextPosition = _position1.position;
             }
- 
-        transform.position = Vector3.MoveTowards(transform.position, _nextPosition, _speed * Time.deltaTime);
+
+        _transform.position = Vector3.MoveTowards(_transform.position, _nextPosition, _speed * Time.deltaTime);
     }
 
     private void OnDrawGizmos()
