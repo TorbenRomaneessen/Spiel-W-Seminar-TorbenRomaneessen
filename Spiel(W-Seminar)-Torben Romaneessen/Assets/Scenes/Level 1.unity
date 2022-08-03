@@ -24272,6 +24272,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 318105684}
     m_Modifications:
+    - target: {fileID: 4016462748169323901, guid: 4ce2566d33e8b0d4fa788926bd04914d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5343679279772818561, guid: 4ce2566d33e8b0d4fa788926bd04914d, type: 3}
       propertyPath: m_Name
       value: StartingPoint
@@ -24334,7 +24338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6535143896837426484, guid: 4ce2566d33e8b0d4fa788926bd04914d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
