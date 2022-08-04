@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     private Button[] _buttons;
 
 
-    void Start()
+    private void Start()
     {
         _levelsUnlocked = PlayerPrefs.GetInt("levelsUnlocked", 1);
 
@@ -28,20 +28,20 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void LoadLevel(int levelIndex)
+    public void LoadLevel(int levelIndex)
     {
         FindObjectOfType<AudioManager>().Play("StartGameSound");
         SceneManager.LoadScene(levelIndex);
     }
 
-    private void LoadNextPage()
+    public void LoadNextPage()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         _levelPage1.SetActive(false);
         _levelPage2.SetActive(true);
     }
 
-    private void LoadPreviousPage()
+    public void LoadPreviousPage()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         _levelPage1.SetActive(true);

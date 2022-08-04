@@ -37,10 +37,10 @@ public class Dialog : MonoBehaviour
             ContinueButton.SetActive(true);
         }
 
-        if (PauseMenu.Instance.FinishText)
+        if (LevelCanvas.Instance.FinishText)
         {
             _textDisplay.text = _sentences[_index];
-            PauseMenu.Instance.FinishText = false;
+            LevelCanvas.Instance.FinishText = false;
         }
 
         if (_index == _sentences.Length - 1 && _textDisplay.text == _sentences[_index])
@@ -65,7 +65,7 @@ public class Dialog : MonoBehaviour
     }
 
 
-    private void NextSentence()
+    public void NextSentence()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         ContinueButton.SetActive(false);
@@ -86,7 +86,7 @@ public class Dialog : MonoBehaviour
         }
     }
 
-    private void CloseDialog()
+    public void CloseDialog()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         DialogBox.SetActive(false);

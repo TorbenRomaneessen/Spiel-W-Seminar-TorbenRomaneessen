@@ -8,6 +8,7 @@ public class Character : MonoBehaviour
     private int _currentHealth = 3;
     private const float Speed = 6f;
     private float _movementX;
+    public bool CanMove;
     private const float JumpForce = 8f;
     public static bool IsDead;
     private float _invincibleTimer;
@@ -69,8 +70,16 @@ public class Character : MonoBehaviour
 
     private void Run()
     {
-        _movementX = Input.GetAxisRaw("Horizontal");
-        _transform.position += new Vector3(_movementX, 0f, 0f) * Time.deltaTime * Speed;
+        if (LevelCanvas.Instance.GameIsPaused == false && LevelCanvas.Instance.GameIsOver == false && LevelCanvas.Instance.LevelIsCompleted == false)
+        {
+            _movementX = Input.GetAxisRaw("Horizontal");
+            _transform.position += new Vector3(_movementX, 0f, 0f) * Time.deltaTime * Speed;
+        }
+
+        else
+        {
+            _canDash = false;
+        }
     }
 
     private void AnimateRun()

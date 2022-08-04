@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class EndPoint : MonoBehaviour
 {
-    public static bool LevelCompleted;
+    public static bool LevelIsCompleted;
     [SerializeField]
     private Animator _flagAnimator;
 
@@ -18,7 +18,7 @@ public class EndPoint : MonoBehaviour
             PlayerPrefs.SetInt("levelsUnlocked", _currentLevel + 1);
         }
 
-        LevelCompleted = true;
+        LevelIsCompleted = true;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
