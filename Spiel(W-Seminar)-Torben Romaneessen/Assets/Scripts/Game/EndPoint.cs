@@ -11,9 +11,9 @@ public class EndPoint : MonoBehaviour
 
     public void LevelPassed()
     {
-        int _currentLevel = SceneManager.GetActiveScene().buildIndex;
+        int _currentLevel = SceneManager.GetActiveScene().buildIndex - 1;
 
-        if (_currentLevel >= PlayerPrefs.GetInt("levelsUnlocked") && _currentLevel >= 4)
+        if (_currentLevel >= PlayerPrefs.GetInt("levelsUnlocked") && _currentLevel < 4)
         {
             PlayerPrefs.SetInt("levelsUnlocked", _currentLevel + 1);
         }
