@@ -50,7 +50,7 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
-        //PlayerPrefs.DeleteAll();
+       // PlayerPrefs.DeleteAll();
         _rigidBody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _transform = GetComponent<Transform>();
